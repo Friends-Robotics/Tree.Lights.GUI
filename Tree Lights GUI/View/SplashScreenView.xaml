@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tree_Lights_GUI.View"
+        xmlns:local="clr-namespace:Tree_Lights_GUI.UserControls"
         mc:Ignorable="d"
         Title="Tree GUI"
         Height="550"
@@ -16,27 +16,35 @@
         >
     <Border
         CornerRadius="15"
-        BorderThickness="3">
-        <Border.BorderBrush>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="Lime" Offset="0"/>
-                <GradientStop Color="GreenYellow" Offset="1"/>
-            </LinearGradientBrush>
-        </Border.BorderBrush>
-
-        <Border.Background>
-            <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
-                <GradientStop Color="#212121" Offset="0"/>
-                <GradientStop Color="#313131" Offset="1"/>
-            </LinearGradientBrush>
-        </Border.Background>
+        BorderThickness="3"
+        BorderBrush="{StaticResource GreenYellowGradientBrush}"
+        Background="{StaticResource GreyGradientBrush}">
 
         <Grid>
-            <ProgressBar 
-                Width="500"
-                Height="20"
-                Margin="147,474,147,50"
-                HorizontalAlignment="Center"></ProgressBar>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Grid.Row="1"
+                Text="Tree Lights"
+                FontSize="40"
+                FontFamily="Century Gothic"
+                Foreground="{StaticResource PrimaryWhiteBrush}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" Height="86" Width="337" TextAlignment="Center"
+                />
+
+            <Image/>
+
+            <local:LoadingSpinner
+                Width="50"
+                Height="50"
+                SpinnerColor="{StaticResource GreenYellowGradientBrush}" 
+                Margin="372,327,372,47" Grid.Row="2"/>
+
         </Grid>
     </Border>
 </Window>
