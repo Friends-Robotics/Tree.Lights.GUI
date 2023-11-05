@@ -9,8 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Circuit Christmas Tree.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\Circuit Christmas Tree.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Images\" />
   </ItemGroup>
 
   <ItemGroup>

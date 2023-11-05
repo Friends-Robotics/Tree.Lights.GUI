@@ -8,12 +8,17 @@
         Title="Tree GUI"
         Height="550"
         Width="800"
-        Background="Transparent" 
         WindowStyle="None"
-        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
         WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown"
         >
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
+    </WindowChrome.WindowChrome>
+
     <Border
         CornerRadius="15"
         BorderThickness="3"
@@ -27,6 +32,14 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+            <Rectangle
+                Grid.Row="0"
+                RadiusX="16"
+                RadiusY="16"
+                Fill="{StaticResource GreyGradientBrush}">
+                
+            </Rectangle>
+
             <TextBlock
                 Grid.Row="1"
                 Text="Tree Lights"
@@ -37,13 +50,12 @@
                 VerticalAlignment="Center" Height="86" Width="337" TextAlignment="Center"
                 />
 
-            <Image/>
-
-            <local:LoadingSpinner
-                Width="50"
-                Height="50"
-                SpinnerColor="{StaticResource GreenYellowGradientBrush}" 
-                Margin="372,327,372,47" Grid.Row="2"/>
+            <Image 
+                Grid.Row="2"
+                Source="/Images/Circuit Christmas Tree.png"
+                Height="300"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"/>
 
         </Grid>
     </Border>
