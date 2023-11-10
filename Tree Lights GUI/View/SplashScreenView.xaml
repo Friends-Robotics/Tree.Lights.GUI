@@ -32,15 +32,23 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Rectangle
-                Grid.Row="0"
-                RadiusX="16"
-                RadiusY="16"
-                Fill="{StaticResource GreyGradientBrush}">
-                
-            </Rectangle>
 
-            <TextBlock
+            <Border
+                CornerRadius="15, 15, 0, 0"
+                Background="{StaticResource PrimaryGreyBrush}">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button/>
+                </Grid>
+            </Border>
+                
+               <TextBlock
                 Grid.Row="1"
                 Text="Tree Lights"
                 FontSize="40"

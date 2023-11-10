@@ -11,7 +11,7 @@
     </Color>
 
     <Color x:Key="PrimaryGrey">
-        #111111
+        #242424
     </Color>
     <Color x:Key="SecondaryGrey" >
         #414141
@@ -22,7 +22,10 @@
     </Color>
 
     <SolidColorBrush x:Key="PrimaryGreenBrush" Color="{StaticResource PrimaryGreen}"/>
+    <SolidColorBrush x:Key="YellowBrush" Color="{StaticResource PrimaryYellow}"/>
     <SolidColorBrush x:Key="PrimaryWhiteBrush" Color="{StaticResource PrimaryWhite}"/>
+    <SolidColorBrush x:Key="PrimaryGreyBrush" Color="{StaticResource PrimaryGrey}"/>
+    <SolidColorBrush x:Key="SecondaryGreyBrush" Color="{StaticResource SecondaryGrey}"/>
 
     <LinearGradientBrush x:Key="GreenYellowGradientBrush" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#00FF00" Offset="0"/>
