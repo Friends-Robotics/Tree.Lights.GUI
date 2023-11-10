@@ -13,12 +13,19 @@
     <Color x:Key="PrimaryGrey">
         #242424
     </Color>
-    <Color x:Key="SecondaryGrey" >
+    <Color x:Key="SecondaryGrey">
         #414141
+    </Color>
+    <Color x:Key="ThirdGrey">
+        #505050
     </Color>
 
     <Color x:Key="PrimaryWhite">
         WhiteSmoke
+    </Color>
+
+    <Color x:Key="PrimaryRed">
+        #FF4444
     </Color>
 
     <SolidColorBrush x:Key="PrimaryGreenBrush" Color="{StaticResource PrimaryGreen}"/>
@@ -26,6 +33,8 @@
     <SolidColorBrush x:Key="PrimaryWhiteBrush" Color="{StaticResource PrimaryWhite}"/>
     <SolidColorBrush x:Key="PrimaryGreyBrush" Color="{StaticResource PrimaryGrey}"/>
     <SolidColorBrush x:Key="SecondaryGreyBrush" Color="{StaticResource SecondaryGrey}"/>
+    <SolidColorBrush x:Key="ThirdGreyBrush" Color="{StaticResource ThirdGrey}"/>
+    <SolidColorBrush x:Key="PrimaryRedBrush" Color="{StaticResource PrimaryRed}"/>
 
     <LinearGradientBrush x:Key="GreenYellowGradientBrush" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#00FF00" Offset="0"/>

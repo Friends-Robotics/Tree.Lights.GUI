@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:Tree_Lights_GUI"
              StartupUri="View\SplashScreenView.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="Styles\ColoursDictionary.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <FontFamily x:Key="FontAwesome">/Font/fontawesome-webfont.ttfaFontAwesome</FontFamily>
+                </ResourceDictionary>
+                <ResourceDictionary Source="Styles\ColoursDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>

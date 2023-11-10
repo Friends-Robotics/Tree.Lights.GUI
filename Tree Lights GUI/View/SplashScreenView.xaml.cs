@@ -12,14 +12,22 @@ namespace Tree_Lights_GUI.View {
             InitializeComponent();
         }
 
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e) {
-            if(e.LeftButton == MouseButtonState.Pressed) {
-                DragMove();
-            }
+        private void CloseButton_MouseDown(object sender, MouseButtonEventArgs e) {
+            Close();
         }
 
-        private void LoadingSpinner_Loaded(object sender, RoutedEventArgs e) {
+        private void MaximiseButton_MouseDown(object sender, MouseButtonEventArgs e) {
+            WindowState = WindowState.Maximized;
+        }
 
+        private void MinimiseButton_MouseDown(object sender, MouseButtonEventArgs e) {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void TopBar_MouseDown(object sender, MouseButtonEventArgs e) {
+            if (e.LeftButton == MouseButtonState.Pressed) {
+                DragMove();
+            }
         }
     }
 }

@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tree_Lights_GUI.UserControls"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:co="Styles\ColoursDictionary.xaml"
         mc:Ignorable="d"
         Title="Tree GUI"
         Height="550"
@@ -12,7 +13,6 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
-        MouseDown="Window_MouseDown"
         >
 
     <WindowChrome.WindowChrome>
@@ -23,7 +23,7 @@
         CornerRadius="15"
         BorderThickness="3"
         BorderBrush="{StaticResource GreenYellowGradientBrush}"
-        Background="{StaticResource GreyGradientBrush}">
+        Background="{StaticResource PrimaryGreyBrush}">
 
         <Grid>
             <Grid.RowDefinitions>
@@ -33,30 +33,60 @@
             </Grid.RowDefinitions>
 
 
-            <Border
+            <Border x:Name="TopBar"
                 CornerRadius="15, 15, 0, 0"
-                Background="{StaticResource PrimaryGreyBrush}">
+                Background="{StaticResource SecondaryGreyBrush}"
+                MouseDown="TopBar_MouseDown">
 
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="30"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button/>
+                    <Border x:Name="MinimiseButton"
+                        Grid.Column="1"
+                        Background="{StaticResource ThirdGreyBrush}"
+                        MouseDown="MinimiseButton_MouseDown">
+
+                        <fa:ImageAwesome Foreground="{StaticResource PrimaryWhiteBrush}" Icon="WindowMinimize" Width="10"/>
+                    </Border>
+
+                    <Border x:Name="MaximiseButton"
+                        Grid.Column="2"
+                        Background="{StaticResource ThirdGreyBrush}"
+                        MouseDown="MaximiseButton_MouseDown">
+
+                        <fa:ImageAwesome Foreground="{StaticResource PrimaryWhiteBrush}" Icon="WindowMaximize" Width="10"/>
+                    </Border>
+
+                    <Border x:Name="CloseButton"
+                        Grid.Column="3"
+                        Background="{StaticResource PrimaryRedBrush}"
+                        MouseDown="CloseButton_MouseDown"
+                        CornerRadius="0, 13, 0, 0">
+
+                        <fa:ImageAwesome Foreground="{StaticResource PrimaryWhiteBrush}" Icon="WindowClose" Width="10"/>
+                    </Border>
                 </Grid>
             </Border>
-                
-               <TextBlock
+
+
+            <Border
                 Grid.Row="1"
-                Text="Tree Lights"
-                FontSize="40"
-                FontFamily="Century Gothic"
-                Foreground="{StaticResource PrimaryWhiteBrush}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center" Height="86" Width="337" TextAlignment="Center"
-                />
+                VerticalAlignment="Center">
+                
+                <TextBlock
+                    Text="Tree Lights"
+                    FontSize="40"
+                    FontFamily="Century Gothic"
+                    Foreground="{StaticResource PrimaryWhiteBrush}"
+                    HorizontalAlignment="Center"
+                    TextAlignment="Center"
+                    />
+            </Border>
 
             <Image 
                 Grid.Row="2"
