@@ -9,7 +9,8 @@
                 <ResourceDictionary>
                     <FontFamily x:Key="FontAwesome">/Font/fontawesome-webfont.ttfaFontAwesome</FontFamily>
                 </ResourceDictionary>
-                <ResourceDictionary Source="Styles\ColoursDictionary.xaml" />
+                <ResourceDictionary Source="Dictionaries\ColoursDictionary.xaml" />
+                <ResourceDictionary Source="Dictionaries\ButtonStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

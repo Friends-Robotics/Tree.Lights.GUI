@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Tree_Lights_GUI.UserControls.TopBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tree_Lights_GUI.UserControls"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style x:Key="MinimaxButton" TargetType="Border">
+            <Setter Property="Border.Background" Value="{StaticResource SecondaryGreyBrush}"/>
+            <Style.Triggers>
+                <Trigger Property="Border.IsMouseOver" Value="True">
+                    <Setter Property="Border.Background" Value="{StaticResource ThirdGreyBrush}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Border
+        Background="{StaticResource SecondaryGreyBrush}"
+        CornerRadius="15, 15, 0, 0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+
+            <Border x:Name="CloseButton"
+                Width="30"
+                Height="30"
+                Grid.Column="3"
+                CornerRadius="0,15,0,0"
+                MouseDown="CloseButton_MouseDown">
+
+                <Border.Style>
+                    <Style>
+                        <Setter Property="Border.Background" Value="{StaticResource SecondaryGreyBrush}"/>
+                        <Style.Triggers>
+                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                <Setter Property="Border.Background" Value="{StaticResource PrimaryRedBrush}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                <fa:IconImage Icon="WindowClose" Width="14" Foreground="{StaticResource PrimaryWhiteBrush}"/>
+
+            </Border>
+
+            <Border x:Name="Maximise"
+                Width="30"
+                Height="30"
+                Grid.Column="2"
+                Style="{StaticResource MinimaxButton}"
+                MouseDown="Maximise_MouseDown">
+
+
+                <fa:IconImage Icon="WindowRestore" Width="14" Foreground="{StaticResource PrimaryWhiteBrush}"/>
+
+            </Border>
+
+            <Border x:Name="MinimiseButton"
+                Width="30"
+                Height="30"
+                Grid.Column="1"
+                Style="{StaticResource MinimaxButton}"
+                MouseDown="MinimiseButton_MouseDown">
+
+                <fa:IconImage Icon="WindowMinimize" Width="14" Foreground="{StaticResource PrimaryWhiteBrush}"/>
+
+            </Border>
+        </Grid>
+
+
+
+    </Border>
+
+</UserControl>

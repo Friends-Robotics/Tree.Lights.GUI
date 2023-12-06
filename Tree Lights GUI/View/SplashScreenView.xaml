@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:co="Styles\ColoursDictionary.xaml"
+        xmlns:uc="clr-namespace:Tree_Lights_GUI.UserControls"
         mc:Ignorable="d"
         Title="Tree GUI"
         Height="550"
@@ -13,7 +14,7 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
-        >
+        SizeChanged="Window_SizeChanged">
 
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
@@ -25,6 +26,7 @@
         BorderBrush="{StaticResource GreenYellowGradientBrush}"
         Background="{StaticResource PrimaryGreyBrush}">
 
+
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
@@ -32,47 +34,11 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-
-            <Border x:Name="TopBar"
-                CornerRadius="15, 15, 0, 0"
-                Background="{StaticResource SecondaryGreyBrush}"
-                MouseDown="TopBar_MouseDown">
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="30"/>
-                        <ColumnDefinition Width="30"/>
-                        <ColumnDefinition Width="30"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Border x:Name="MinimiseButton"
-                        Grid.Column="1"
-                        Background="{StaticResource ThirdGreyBrush}"
-                        MouseDown="MinimiseButton_MouseDown">
-
-                        <fa:ImageAwesome Foreground="{StaticResource PrimaryWhiteBrush}" Icon="WindowMinimize" Width="10"/>
-                    </Border>
-
-                    <Border x:Name="MaximiseButton"
-                        Grid.Column="2"
-                        Background="{StaticResource ThirdGreyBrush}"
-                        MouseDown="MaximiseButton_MouseDown">
-
-                        <fa:ImageAwesome Foreground="{StaticResource PrimaryWhiteBrush}" Icon="WindowMaximize" Width="10"/>
-                    </Border>
-
-                    <Border x:Name="CloseButton"
-                        Grid.Column="3"
-                        Background="{StaticResource PrimaryRedBrush}"
-                        MouseDown="CloseButton_MouseDown"
-                        CornerRadius="0, 13, 0, 0">
-
-                        <fa:ImageAwesome Foreground="{StaticResource PrimaryWhiteBrush}" Icon="WindowClose" Width="10"/>
-                    </Border>
-                </Grid>
-            </Border>
-
+            <uc:TopBar x:Name="TopBar"
+                CloseButtonClicked="TopBar_CloseButtonClicked"
+                MinimiseButtonClicked="TopBar_MinimiseButtonClicked"
+                MaximiseButtonClicked="TopBar_MaximiseButtonClicked"
+                MouseDown="TopBar_MouseDown"/>
 
             <Border
                 Grid.Row="1"
