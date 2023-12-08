@@ -10,23 +10,20 @@
         Title="Tree GUI"
         Height="550"
         Width="800"
-        WindowStyle="None"
-        AllowsTransparency="True"
         Background="Transparent"
-        WindowStartupLocation="CenterScreen"
-        SizeChanged="Window_SizeChanged">
+        WindowStartupLocation="CenterScreen">
 
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" GlassFrameThickness="0"/>
     </WindowChrome.WindowChrome>
 
     <Border
-        CornerRadius="15"
+        CornerRadius="7"
         BorderThickness="3"
         BorderBrush="{StaticResource GreenYellowGradientBrush}"
         Background="{StaticResource PrimaryGreyBrush}">
 
-
+        
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
@@ -50,8 +47,7 @@
                     FontFamily="Century Gothic"
                     Foreground="{StaticResource PrimaryWhiteBrush}"
                     HorizontalAlignment="Center"
-                    TextAlignment="Center"
-                    />
+                    TextAlignment="Center"/>
             </Border>
 
             <Image 
