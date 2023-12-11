@@ -26,13 +26,13 @@
             pnlMenuStrip = new Panel();
             miConfig = new Custom_Controls.MenuItem();
             miExit = new Custom_Controls.MenuItem();
-            miAdmin = new Custom_Controls.MenuItem();
-            miSettings = new Custom_Controls.MenuItem();
-            miRanks = new Custom_Controls.MenuItem();
+            miTree = new Custom_Controls.MenuItem();
+            miScan = new Custom_Controls.MenuItem();
+            miPlay = new Custom_Controls.MenuItem();
             miHome = new Custom_Controls.MenuItem();
             pnlMenuDivider = new Panel();
             miMenu = new Custom_Controls.MenuItem();
-            pnlUserViewHolder = new Panel();
+            pnlViewHolder = new Panel();
             sb = new Custom_Controls.CustomScrollBar();
             pnlMenuStrip.SuspendLayout();
             SuspendLayout();
@@ -42,9 +42,9 @@
             pnlMenuStrip.BackColor = Color.FromArgb(18, 17, 19);
             pnlMenuStrip.Controls.Add(miConfig);
             pnlMenuStrip.Controls.Add(miExit);
-            pnlMenuStrip.Controls.Add(miAdmin);
-            pnlMenuStrip.Controls.Add(miSettings);
-            pnlMenuStrip.Controls.Add(miRanks);
+            pnlMenuStrip.Controls.Add(miTree);
+            pnlMenuStrip.Controls.Add(miScan);
+            pnlMenuStrip.Controls.Add(miPlay);
             pnlMenuStrip.Controls.Add(miHome);
             pnlMenuStrip.Controls.Add(pnlMenuDivider);
             pnlMenuStrip.Controls.Add(miMenu);
@@ -68,6 +68,7 @@
             miConfig.Name = "miConfig";
             miConfig.Size = new Size(200, 80);
             miConfig.TabIndex = 10;
+            miConfig.MenuClick += miConfig_MenuClick;
             // 
             // miExit
             // 
@@ -83,55 +84,55 @@
             miExit.Name = "miExit";
             miExit.Size = new Size(200, 80);
             miExit.TabIndex = 8;
-            miExit.MenuClick += miSignOut_MenuClick;
+            miExit.MenuClick += miExit_MenuClick;
             // 
-            // miAdmin
+            // miTree
             // 
-            miAdmin.BackColor = Color.FromArgb(18, 17, 19);
-            miAdmin.BaseColor = Color.FromArgb(18, 17, 19);
-            miAdmin.Dock = DockStyle.Top;
-            miAdmin.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            miAdmin.HoverColour = Color.FromArgb(107, 122, 110);
-            miAdmin.Image = Resources.Icons.tree_christmas;
-            miAdmin.ImagePadding = 20;
-            miAdmin.Location = new Point(0, 327);
-            miAdmin.MenuText = "Tree";
-            miAdmin.Name = "miAdmin";
-            miAdmin.Size = new Size(200, 80);
-            miAdmin.TabIndex = 7;
-            miAdmin.MenuClick += miAdmin_MenuClick;
+            miTree.BackColor = Color.FromArgb(18, 17, 19);
+            miTree.BaseColor = Color.FromArgb(18, 17, 19);
+            miTree.Dock = DockStyle.Top;
+            miTree.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            miTree.HoverColour = Color.FromArgb(107, 122, 110);
+            miTree.Image = Resources.Icons.tree_christmas;
+            miTree.ImagePadding = 20;
+            miTree.Location = new Point(0, 327);
+            miTree.MenuText = "Tree";
+            miTree.Name = "miTree";
+            miTree.Size = new Size(200, 80);
+            miTree.TabIndex = 7;
+            miTree.MenuClick += miTree_MenuClick;
             // 
-            // miSettings
+            // miScan
             // 
-            miSettings.BackColor = Color.FromArgb(18, 17, 19);
-            miSettings.BaseColor = Color.FromArgb(18, 17, 19);
-            miSettings.Dock = DockStyle.Top;
-            miSettings.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            miSettings.HoverColour = Color.FromArgb(107, 122, 110);
-            miSettings.Image = Resources.Icons.camera;
-            miSettings.ImagePadding = 20;
-            miSettings.Location = new Point(0, 247);
-            miSettings.MenuText = "Scan";
-            miSettings.Name = "miSettings";
-            miSettings.Size = new Size(200, 80);
-            miSettings.TabIndex = 6;
-            miSettings.MenuClick += miSettings_MenuClick;
+            miScan.BackColor = Color.FromArgb(18, 17, 19);
+            miScan.BaseColor = Color.FromArgb(18, 17, 19);
+            miScan.Dock = DockStyle.Top;
+            miScan.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            miScan.HoverColour = Color.FromArgb(107, 122, 110);
+            miScan.Image = Resources.Icons.camera;
+            miScan.ImagePadding = 20;
+            miScan.Location = new Point(0, 247);
+            miScan.MenuText = "Scan";
+            miScan.Name = "miScan";
+            miScan.Size = new Size(200, 80);
+            miScan.TabIndex = 6;
+            miScan.MenuClick += miScan_MenuClick;
             // 
-            // miRanks
+            // miPlay
             // 
-            miRanks.BackColor = Color.FromArgb(18, 17, 19);
-            miRanks.BaseColor = Color.FromArgb(18, 17, 19);
-            miRanks.Dock = DockStyle.Top;
-            miRanks.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            miRanks.HoverColour = Color.FromArgb(107, 122, 110);
-            miRanks.Image = Resources.Icons.animated_icon;
-            miRanks.ImagePadding = 20;
-            miRanks.Location = new Point(0, 167);
-            miRanks.MenuText = "Play";
-            miRanks.Name = "miRanks";
-            miRanks.Size = new Size(200, 80);
-            miRanks.TabIndex = 9;
-            miRanks.MenuClick += miRanks_Click;
+            miPlay.BackColor = Color.FromArgb(18, 17, 19);
+            miPlay.BaseColor = Color.FromArgb(18, 17, 19);
+            miPlay.Dock = DockStyle.Top;
+            miPlay.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            miPlay.HoverColour = Color.FromArgb(107, 122, 110);
+            miPlay.Image = Resources.Icons.animated_icon;
+            miPlay.ImagePadding = 20;
+            miPlay.Location = new Point(0, 167);
+            miPlay.MenuText = "Play";
+            miPlay.Name = "miPlay";
+            miPlay.Size = new Size(200, 80);
+            miPlay.TabIndex = 9;
+            miPlay.MenuClick += miPlay_Click;
             // 
             // miHome
             // 
@@ -174,15 +175,15 @@
             miMenu.TabIndex = 1;
             miMenu.MenuClick += Menu_Click;
             // 
-            // pnlUserViewHolder
+            // pnlViewHolder
             // 
-            pnlUserViewHolder.BackColor = Color.FromArgb(34, 39, 37);
-            pnlUserViewHolder.Dock = DockStyle.Fill;
-            pnlUserViewHolder.Location = new Point(200, 0);
-            pnlUserViewHolder.Margin = new Padding(3, 4, 3, 4);
-            pnlUserViewHolder.Name = "pnlUserViewHolder";
-            pnlUserViewHolder.Size = new Size(975, 900);
-            pnlUserViewHolder.TabIndex = 1;
+            pnlViewHolder.BackColor = Color.FromArgb(34, 39, 37);
+            pnlViewHolder.Dock = DockStyle.Fill;
+            pnlViewHolder.Location = new Point(200, 0);
+            pnlViewHolder.Margin = new Padding(3, 4, 3, 4);
+            pnlViewHolder.Name = "pnlViewHolder";
+            pnlViewHolder.Size = new Size(975, 900);
+            pnlViewHolder.TabIndex = 1;
             // 
             // sb
             // 
@@ -199,7 +200,7 @@
             sb.Name = "sb";
             sb.Size = new Size(25, 900);
             sb.TabIndex = 0;
-            sb.Text = "customScrollBar1";
+            sb.Text = "sb";
             sb.ThumbColor = Color.White;
             sb.ThumbSize = new Size(15, 80);
             sb.Value = 0;
@@ -211,7 +212,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(20, 20, 50);
             ClientSize = new Size(1200, 900);
-            Controls.Add(pnlUserViewHolder);
+            Controls.Add(pnlViewHolder);
             Controls.Add(sb);
             Controls.Add(pnlMenuStrip);
             DoubleBuffered = true;
@@ -226,14 +227,14 @@
         #endregion
 
         private Panel pnlMenuStrip;
-        private Panel pnlUserViewHolder;
+        private Panel pnlViewHolder;
         private Custom_Controls.MenuItem miMenu;
-        private Custom_Controls.MenuItem miAdmin;
-        private Custom_Controls.MenuItem miSettings;
+        private Custom_Controls.MenuItem miTree;
+        private Custom_Controls.MenuItem miScan;
         private Custom_Controls.MenuItem miHome;
         private Panel pnlMenuDivider;
         private Custom_Controls.MenuItem miExit;
-        private Custom_Controls.MenuItem miRanks;
+        private Custom_Controls.MenuItem miPlay;
         private Custom_Controls.CustomScrollBar sb;
         private Custom_Controls.MenuItem miConfig;
     }

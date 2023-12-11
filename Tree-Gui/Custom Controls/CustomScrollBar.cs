@@ -130,11 +130,10 @@ public partial class CustomScrollBar : Control {
     public int Value {
         get => _value;
         set {
-            // In design mode clamp the value
-            // if (DesignMode) value = Math.Clamp(value, Minimum, Minimum);
             value = Math.Clamp(value, Minimum, Maximum);
             _value = value;
             TrySetThumbHeight(value);
+            ValueChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -189,7 +188,6 @@ public partial class CustomScrollBar : Control {
         // Resize the thumb rectangle to fit with the padding
         SetChannelRectangleToPadding(ChannelPadding);
         TrySetThumbHeight(Value);
-
     }
 
     protected override void OnPaint(PaintEventArgs e) {
@@ -240,7 +238,7 @@ public partial class CustomScrollBar : Control {
     protected override void OnMouseWheel(MouseEventArgs e) {
         base.OnMouseWheel(e);
 
-        Value -= e.Delta / MouseWheelSensitivity;
+        Value -= e.Delta * MouseWheelSensitivity;
         ValueChanged?.Invoke(this, EventArgs.Empty);
     }
 
@@ -255,8 +253,7 @@ public partial class CustomScrollBar : Control {
 
         if (_thumbRectangle.Y != newPosition) {
             _thumbRectangle.Y = newPosition;
-            _value = ThumbYToValue();
-            ValueChanged?.Invoke(this, EventArgs.Empty);
+            Value = ThumbYToValue();
         }
 
         Refresh();
@@ -272,9 +269,8 @@ public partial class CustomScrollBar : Control {
 
         _thumbRectangle.Y = thumbY;
 
-        if (_value != value) {
-            _value = ThumbYToValue();
-            ValueChanged?.Invoke(this, EventArgs.Empty);
+        if (Value != value) {
+            Value = ThumbYToValue();
         }
 
         Refresh();

@@ -3,6 +3,9 @@
 namespace Tree_Gui.View;
 public partial class formMainMenu : Form {
 
+    private const int MENU_WIDTH = 200;
+    private const int MINIMISED_MENU_WIDTH = 75;
+
     private bool _menuMinimised = true;
     private Form? _subForm;
     private int? _subFormBaseHeight;
@@ -24,6 +27,8 @@ public partial class formMainMenu : Form {
         InitializeComponent();
 
         DoubleBuffered = true;
+
+        DisplayUserForm(new formHome());
 
         // Call the OnResize event to ensure that the form is formatted correctly
         OnResize(EventArgs.Empty);
@@ -47,35 +52,39 @@ public partial class formMainMenu : Form {
             sb.Maximum = SubForm.Height - Height;
             int sbRange = sb.Maximum - sb.Minimum;
             int thumbHeight = Height - sbRange;
-            sb.ThumbSize = new Size(sb.ThumbSize.Width, Math.Clamp(thumbHeight, 30, Height - sb.ChannelPadding.Vertical));
+
+            // Ensure the form is not minimised before making this check to avoid an exception
+            if ((ActiveForm as formMaster)?.WindowState != FormWindowState.Minimized)
+                sb.ThumbSize = new Size(sb.ThumbSize.Width, Math.Clamp(thumbHeight, 30, Height - sb.ChannelPadding.Vertical));
 
             // Set the scroll bar value to the correct position
+            // Atm this means resetting it cus idek whats going on when i try to resize not at 0
             sb.Value = 0;
         }
 
 
-        SubForm.Width = Width - 75;
-        if (_menuMinimised) Minimise();
-        else Maximise();
+        SubForm.Width = Width - MINIMISED_MENU_WIDTH;
+        if (_menuMinimised) MinimiseMenu();
+        else MaximiseMenu();
     }
 
     private void Menu_Click(object sender, EventArgs e) {
         _menuMinimised = !_menuMinimised;
-        if (_menuMinimised) Minimise();
-        else Maximise();
+        if (_menuMinimised) MinimiseMenu();
+        else MaximiseMenu();
     }
 
-    private void Minimise() {
-        pnlMenuStrip.Width = 75;
+    private void MinimiseMenu() {
+        pnlMenuStrip.Width = MINIMISED_MENU_WIDTH;
 
         if (SubForm is null) return;
         SubForm.Location = new Point(0, 0);
     }
-    private void Maximise() {
-        pnlMenuStrip.Width = 200;
+    private void MaximiseMenu() {
+        pnlMenuStrip.Width = MENU_WIDTH;
 
         if (SubForm is null) return;
-        SubForm.Location = new Point(-125, 0);
+        SubForm.Location = new Point(MINIMISED_MENU_WIDTH - MENU_WIDTH, 0);
     }
 
     private void DisplayUserForm(Form form) {
@@ -91,48 +100,54 @@ public partial class formMainMenu : Form {
         SubForm.Location = _menuMinimised ? new Point(0, 0) : new Point(-125, 0);
 
         // Display in panel
-        pnlUserViewHolder.Controls.Clear();
-        pnlUserViewHolder.Controls.Add(SubForm);
-        pnlUserViewHolder.Show();
+        pnlViewHolder.Controls.Clear();
+        pnlViewHolder.Controls.Add(SubForm);
+        pnlViewHolder.Show();
 
         // Redraw form
         Refresh();
     }
 
     private void miHome_MenuClick(object sender, EventArgs e) {
+        MinimiseMenu();
         if (SubForm is not formHome) DisplayUserForm(new formHome());
     }
 
-    private void miQuiz_MenuClick(object sender, EventArgs e) {
-        throw new NotImplementedException();
+    private void miPlay_Click(object sender, EventArgs e) {
+        MinimiseMenu();
+        if (SubForm is not formPlay) DisplayUserForm(new formPlay());
     }
 
-    private void miRanks_Click(object sender, EventArgs e) {
-        throw new NotImplementedException();
+    private void miScan_MenuClick(object sender, EventArgs e) {
+        MinimiseMenu();
+        if (SubForm is not formScan) DisplayUserForm(new formScan());
     }
 
-    private void miSettings_MenuClick(object sender, EventArgs e) {
-        throw new NotImplementedException();
+    private void miTree_MenuClick(object sender, EventArgs e) {
+        MinimiseMenu();
+        if (SubForm is not formTree) DisplayUserForm(new formTree());
     }
 
-    private void miSignOut_MenuClick(object sender, EventArgs e) {
+    private void miConfig_MenuClick(object sender, EventArgs e) {
+        MinimiseMenu();
+        if (SubForm is not formConfig) DisplayUserForm(new formConfig());
+    }
+
+    private void miExit_MenuClick(object sender, EventArgs e) {
+        MinimiseMenu();
         DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.OKCancel);
         if (result == DialogResult.OK) {
             (ActiveForm as formMaster)?.Close();
         }
     }
 
-    private void miAdmin_MenuClick(object sender, EventArgs e) {
-        throw new NotImplementedException();
-    }
-
-    public void ScrollUserView(int distance) {
-        if (SubForm is null) return;
-        SubForm.Location = new Point(0, distance);
-        Refresh();
+    public void ScrollUserView(int value) {
+        sb.Value -= value;
     }
 
     private void sb_ValueChanged(object sender, EventArgs e) {
-        ScrollUserView(-sb.Value);
+        if (SubForm is null) return;
+        SubForm.Location = new Point(_menuMinimised ? -125 : 0, -sb.Value);
+        Refresh();
     }
 }
