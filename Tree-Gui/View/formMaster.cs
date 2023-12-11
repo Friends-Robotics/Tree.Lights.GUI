@@ -58,7 +58,7 @@ public partial class formMaster : Form {
         DisplayForm(splashScreen);
         DisplayFormInBackground(form);
 
-        await splashScreen.SimulateLoading(500);
+        await splashScreen.SimulateLoading(1000);
 
         form.BringToFront();
         pnlFormHolder.Controls.Remove(splashScreen);

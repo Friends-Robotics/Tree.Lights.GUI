@@ -16,7 +16,8 @@ namespace Tree_Gui {
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
             pb.CenterX();
-            lblQuizTitle.CenterX();
+            lblTitle.CenterX();
+            picLogo.Center();
         }
 
         public async Task SimulateLoading(int duration = 1000) {

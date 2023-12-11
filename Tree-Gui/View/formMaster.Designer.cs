@@ -28,7 +28,7 @@
             // 
             // pnlFormHolder
             // 
-            pnlFormHolder.BackColor = Color.FromArgb(20, 20, 50);
+            pnlFormHolder.BackColor = Color.FromArgb(34, 39, 37);
             pnlFormHolder.Dock = DockStyle.Fill;
             pnlFormHolder.Location = new Point(0, 0);
             pnlFormHolder.Margin = new Padding(3, 4, 3, 4);

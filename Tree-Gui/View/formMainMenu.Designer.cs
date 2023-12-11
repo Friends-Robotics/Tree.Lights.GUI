@@ -24,11 +24,11 @@
         /// </summary>
         private void InitializeComponent() {
             pnlMenuStrip = new Panel();
-            miSignOut = new Custom_Controls.MenuItem();
+            miConfig = new Custom_Controls.MenuItem();
+            miExit = new Custom_Controls.MenuItem();
             miAdmin = new Custom_Controls.MenuItem();
             miSettings = new Custom_Controls.MenuItem();
             miRanks = new Custom_Controls.MenuItem();
-            miQuiz = new Custom_Controls.MenuItem();
             miHome = new Custom_Controls.MenuItem();
             pnlMenuDivider = new Panel();
             miMenu = new Custom_Controls.MenuItem();
@@ -39,12 +39,12 @@
             // 
             // pnlMenuStrip
             // 
-            pnlMenuStrip.BackColor = Color.FromArgb(0, 150, 50);
-            pnlMenuStrip.Controls.Add(miSignOut);
+            pnlMenuStrip.BackColor = Color.FromArgb(18, 17, 19);
+            pnlMenuStrip.Controls.Add(miConfig);
+            pnlMenuStrip.Controls.Add(miExit);
             pnlMenuStrip.Controls.Add(miAdmin);
             pnlMenuStrip.Controls.Add(miSettings);
             pnlMenuStrip.Controls.Add(miRanks);
-            pnlMenuStrip.Controls.Add(miQuiz);
             pnlMenuStrip.Controls.Add(miHome);
             pnlMenuStrip.Controls.Add(pnlMenuDivider);
             pnlMenuStrip.Controls.Add(miMenu);
@@ -54,31 +54,48 @@
             pnlMenuStrip.Size = new Size(200, 900);
             pnlMenuStrip.TabIndex = 0;
             // 
-            // miSignOut
+            // miConfig
             // 
-            miSignOut.BackColor = Color.FromArgb(0, 150, 50);
-            miSignOut.BaseColor = Color.FromArgb(40, 40, 90);
-            miSignOut.Dock = DockStyle.Bottom;
-            miSignOut.HoverColour = Color.FromArgb(40, 40, 80);
-            miSignOut.Image = null;
-            miSignOut.ImagePadding = 20;
-            miSignOut.Location = new Point(0, 820);
-            miSignOut.MenuText = "Sign out";
-            miSignOut.Name = "miSignOut";
-            miSignOut.Size = new Size(200, 80);
-            miSignOut.TabIndex = 8;
-            miSignOut.MenuClick += miSignOut_MenuClick;
+            miConfig.BackColor = Color.FromArgb(18, 17, 19);
+            miConfig.BaseColor = Color.FromArgb(18, 17, 19);
+            miConfig.Dock = DockStyle.Top;
+            miConfig.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            miConfig.HoverColour = Color.FromArgb(107, 122, 110);
+            miConfig.Image = Resources.Icons.settings_sliders;
+            miConfig.ImagePadding = 20;
+            miConfig.Location = new Point(0, 407);
+            miConfig.MenuText = "Config";
+            miConfig.Name = "miConfig";
+            miConfig.Size = new Size(200, 80);
+            miConfig.TabIndex = 10;
+            // 
+            // miExit
+            // 
+            miExit.BackColor = Color.FromArgb(18, 17, 19);
+            miExit.BaseColor = Color.FromArgb(18, 17, 19);
+            miExit.Dock = DockStyle.Bottom;
+            miExit.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            miExit.HoverColour = Color.FromArgb(107, 122, 110);
+            miExit.Image = Resources.Icons.circle_xmark;
+            miExit.ImagePadding = 20;
+            miExit.Location = new Point(0, 820);
+            miExit.MenuText = "Exit";
+            miExit.Name = "miExit";
+            miExit.Size = new Size(200, 80);
+            miExit.TabIndex = 8;
+            miExit.MenuClick += miSignOut_MenuClick;
             // 
             // miAdmin
             // 
-            miAdmin.BackColor = Color.FromArgb(0, 150, 50);
-            miAdmin.BaseColor = Color.FromArgb(40, 40, 90);
+            miAdmin.BackColor = Color.FromArgb(18, 17, 19);
+            miAdmin.BaseColor = Color.FromArgb(18, 17, 19);
             miAdmin.Dock = DockStyle.Top;
-            miAdmin.HoverColour = Color.FromArgb(40, 40, 80);
-            miAdmin.Image = null;
+            miAdmin.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            miAdmin.HoverColour = Color.FromArgb(107, 122, 110);
+            miAdmin.Image = Resources.Icons.tree_christmas;
             miAdmin.ImagePadding = 20;
-            miAdmin.Location = new Point(0, 407);
-            miAdmin.MenuText = "Admin";
+            miAdmin.Location = new Point(0, 327);
+            miAdmin.MenuText = "Tree";
             miAdmin.Name = "miAdmin";
             miAdmin.Size = new Size(200, 80);
             miAdmin.TabIndex = 7;
@@ -86,14 +103,15 @@
             // 
             // miSettings
             // 
-            miSettings.BackColor = Color.FromArgb(0, 150, 50);
-            miSettings.BaseColor = Color.FromArgb(40, 40, 90);
+            miSettings.BackColor = Color.FromArgb(18, 17, 19);
+            miSettings.BaseColor = Color.FromArgb(18, 17, 19);
             miSettings.Dock = DockStyle.Top;
-            miSettings.HoverColour = Color.FromArgb(40, 40, 80);
-            miSettings.Image = null;
+            miSettings.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            miSettings.HoverColour = Color.FromArgb(107, 122, 110);
+            miSettings.Image = Resources.Icons.camera;
             miSettings.ImagePadding = 20;
-            miSettings.Location = new Point(0, 327);
-            miSettings.MenuText = "Settings";
+            miSettings.Location = new Point(0, 247);
+            miSettings.MenuText = "Scan";
             miSettings.Name = "miSettings";
             miSettings.Size = new Size(200, 80);
             miSettings.TabIndex = 6;
@@ -101,41 +119,28 @@
             // 
             // miRanks
             // 
-            miRanks.BackColor = Color.FromArgb(0, 150, 50);
-            miRanks.BaseColor = Color.FromArgb(40, 40, 90);
+            miRanks.BackColor = Color.FromArgb(18, 17, 19);
+            miRanks.BaseColor = Color.FromArgb(18, 17, 19);
             miRanks.Dock = DockStyle.Top;
-            miRanks.HoverColour = Color.FromArgb(40, 40, 80);
-            miRanks.Image = null;
+            miRanks.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            miRanks.HoverColour = Color.FromArgb(107, 122, 110);
+            miRanks.Image = Resources.Icons.animated_icon;
             miRanks.ImagePadding = 20;
-            miRanks.Location = new Point(0, 247);
-            miRanks.MenuText = "Ranks";
+            miRanks.Location = new Point(0, 167);
+            miRanks.MenuText = "Play";
             miRanks.Name = "miRanks";
             miRanks.Size = new Size(200, 80);
             miRanks.TabIndex = 9;
             miRanks.MenuClick += miRanks_Click;
             // 
-            // miQuiz
-            // 
-            miQuiz.BackColor = Color.FromArgb(0, 150, 50);
-            miQuiz.BaseColor = Color.FromArgb(40, 40, 90);
-            miQuiz.Dock = DockStyle.Top;
-            miQuiz.HoverColour = Color.FromArgb(40, 40, 80);
-            miQuiz.Image = null;
-            miQuiz.ImagePadding = 20;
-            miQuiz.Location = new Point(0, 167);
-            miQuiz.MenuText = "Quiz";
-            miQuiz.Name = "miQuiz";
-            miQuiz.Size = new Size(200, 80);
-            miQuiz.TabIndex = 4;
-            miQuiz.MenuClick += miQuiz_MenuClick;
-            // 
             // miHome
             // 
-            miHome.BackColor = Color.FromArgb(0, 150, 50);
-            miHome.BaseColor = Color.FromArgb(40, 40, 90);
+            miHome.BackColor = Color.FromArgb(18, 17, 19);
+            miHome.BaseColor = Color.FromArgb(18, 17, 19);
             miHome.Dock = DockStyle.Top;
-            miHome.HoverColour = Color.FromArgb(40, 40, 80);
-            miHome.Image = null;
+            miHome.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            miHome.HoverColour = Color.FromArgb(107, 122, 110);
+            miHome.Image = Resources.Icons.house_tree;
             miHome.ImagePadding = 20;
             miHome.Location = new Point(0, 87);
             miHome.MenuText = "Home";
@@ -146,7 +151,7 @@
             // 
             // pnlMenuDivider
             // 
-            pnlMenuDivider.BackColor = Color.White;
+            pnlMenuDivider.BackColor = Color.FromArgb(137, 152, 120);
             pnlMenuDivider.Dock = DockStyle.Top;
             pnlMenuDivider.Location = new Point(0, 80);
             pnlMenuDivider.Name = "pnlMenuDivider";
@@ -155,11 +160,12 @@
             // 
             // miMenu
             // 
-            miMenu.BackColor = Color.FromArgb(0, 150, 50);
-            miMenu.BaseColor = Color.FromArgb(40, 40, 90);
+            miMenu.BackColor = Color.FromArgb(18, 17, 19);
+            miMenu.BaseColor = Color.FromArgb(18, 17, 19);
             miMenu.Dock = DockStyle.Top;
-            miMenu.HoverColour = Color.FromArgb(40, 40, 80);
-            miMenu.Image = null;
+            miMenu.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            miMenu.HoverColour = Color.FromArgb(107, 122, 110);
+            miMenu.Image = Resources.Icons.menu_dots_vertical;
             miMenu.ImagePadding = 20;
             miMenu.Location = new Point(0, 0);
             miMenu.MenuText = "Menu";
@@ -170,7 +176,7 @@
             // 
             // pnlUserViewHolder
             // 
-            pnlUserViewHolder.BackColor = Color.FromArgb(50, 50, 50);
+            pnlUserViewHolder.BackColor = Color.FromArgb(34, 39, 37);
             pnlUserViewHolder.Dock = DockStyle.Fill;
             pnlUserViewHolder.Location = new Point(200, 0);
             pnlUserViewHolder.Margin = new Padding(3, 4, 3, 4);
@@ -180,9 +186,10 @@
             // 
             // sb
             // 
+            sb.BackColor = Color.FromArgb(18, 17, 19);
             sb.BorderColor = Color.Black;
             sb.BorderWidth = 0;
-            sb.ChannelColor = Color.FromArgb(40, 40, 90);
+            sb.ChannelColor = Color.FromArgb(18, 17, 19);
             sb.ChannelPadding = new Padding(5);
             sb.Dock = DockStyle.Right;
             sb.Location = new Point(1175, 0);
@@ -208,6 +215,7 @@
             Controls.Add(sb);
             Controls.Add(pnlMenuStrip);
             DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "formMainMenu";
             Text = "HomeView";
@@ -222,11 +230,11 @@
         private Custom_Controls.MenuItem miMenu;
         private Custom_Controls.MenuItem miAdmin;
         private Custom_Controls.MenuItem miSettings;
-        private Custom_Controls.MenuItem miQuiz;
         private Custom_Controls.MenuItem miHome;
         private Panel pnlMenuDivider;
-        private Custom_Controls.MenuItem miSignOut;
+        private Custom_Controls.MenuItem miExit;
         private Custom_Controls.MenuItem miRanks;
         private Custom_Controls.CustomScrollBar sb;
+        private Custom_Controls.MenuItem miConfig;
     }
 }

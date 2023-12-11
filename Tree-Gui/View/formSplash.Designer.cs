@@ -23,21 +23,22 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            lblQuizTitle = new Label();
+            lblTitle = new Label();
             pb = new Custom_Controls.CustomProgressBar();
+            picLogo = new Custom_Controls.PicturePanel();
             SuspendLayout();
             // 
-            // lblQuizTitle
+            // lblTitle
             // 
-            lblQuizTitle.Anchor = AnchorStyles.None;
-            lblQuizTitle.AutoSize = true;
-            lblQuizTitle.Font = new Font("Consolas", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lblQuizTitle.ForeColor = Color.FromArgb(247, 247, 242);
-            lblQuizTitle.Location = new Point(490, 276);
-            lblQuizTitle.Name = "lblQuizTitle";
-            lblQuizTitle.Size = new Size(196, 47);
-            lblQuizTitle.TabIndex = 2;
-            lblQuizTitle.Text = "Tree Gui";
+            lblTitle.Anchor = AnchorStyles.None;
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Consolas", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.ForeColor = Color.FromArgb(247, 247, 242);
+            lblTitle.Location = new Point(495, 181);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(196, 47);
+            lblTitle.TabIndex = 2;
+            lblTitle.Text = "Tree Gui";
             // 
             // pb
             // 
@@ -45,7 +46,7 @@
             pb.Angle = 0;
             pb.BackingColor = Color.White;
             pb.EndColor = Color.FromArgb(228, 230, 195);
-            pb.Location = new Point(354, 649);
+            pb.Location = new Point(331, 710);
             pb.Name = "pb";
             pb.Progress = 1F;
             pb.Size = new Size(500, 50);
@@ -53,14 +54,25 @@
             pb.TabIndex = 3;
             pb.Text = "customProgressBar1";
             // 
+            // picLogo
+            // 
+            picLogo.Image = Resources.Images.Circuit_Christmas_Tree;
+            picLogo.ImagePortion = new Rectangle(0, 0, 942, 1213);
+            picLogo.Location = new Point(443, 248);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(314, 404);
+            picLogo.TabIndex = 5;
+            picLogo.Text = "picturePanel1";
+            // 
             // formSplash
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 39, 37);
-            ClientSize = new Size(1222, 1000);
+            ClientSize = new Size(1200, 1000);
+            Controls.Add(picLogo);
             Controls.Add(pb);
-            Controls.Add(lblQuizTitle);
+            Controls.Add(lblTitle);
             ForeColor = Color.CornflowerBlue;
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
@@ -72,7 +84,8 @@
 
         #endregion
 
-        private Label lblQuizTitle;
+        private Label lblTitle;
         private Custom_Controls.CustomProgressBar pb;
+        private Custom_Controls.PicturePanel picLogo;
     }
 }

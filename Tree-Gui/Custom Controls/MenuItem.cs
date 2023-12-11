@@ -73,6 +73,16 @@ public partial class MenuItem : UserControl {
         }
     }
 
+    [Category("_MenuItem")]
+    public override Font Font {
+        get => lbl.Font;
+        set {
+            lbl.Font = value;
+            base.Font = value;
+        }
+    }
+
+
     #endregion
 
     #region Events
