@@ -26,7 +26,6 @@
     <PackageReference Include="Emgu.CV" Version="4.8.1.5350" />
     <PackageReference Include="Emgu.CV.Bitmap" Version="4.8.1.5350" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
-    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
     <PackageReference Include="FriendsRobotics.TreeAPI" Version="1.1.1" />
     <PackageReference Include="FslGift.Serialization" Version="0.1.0" />
   </ItemGroup>

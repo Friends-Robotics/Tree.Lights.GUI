@@ -1,33 +1,36 @@
-﻿<Window x:Class="Tree_Lights_GUI.View.SplashScreenView"
+﻿<Window x:Class="Tree_Lights_GUI.View.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tree_Lights_GUI.View"
+        xmlns:uc="clr-namespace:Tree_Lights_GUI.UserControls"
         mc:Ignorable="d"
-        Title="SplashScreenView"
-        Height="400"
-        Width="600"
-        WindowStartupLocation="CenterScreen"
-        WindowStyle="None"
-        AllowsTransparency="True"
-        Background="Transparent">
+        Title="Tree GUI"
+        Height="550"
+        Width="800"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen">
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" GlassFrameThickness="0"/>
+    </WindowChrome.WindowChrome>
 
     <Border
         CornerRadius="7"
         BorderThickness="3"
         BorderBrush="{StaticResource GreenYellowGradientBrush}"
-        Background="{StaticResource GreyGradientBrush}">
+        Background="{StaticResource PrimaryGreyBrush}">
 
 
         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-            <!--<Rectangle
-                Width="100">
-                <Rectangle.Fill>
-                    <SolidColorBrush Color="{StaticResource SecondaryGrey}"/>
-                </Rectangle.Fill>
-            </Rectangle>-->
+            <uc:TopBar x:Name="TopBar"/>
 
             <Border
                 Grid.Row="1"
@@ -36,17 +39,18 @@
                 <TextBlock
                     Text="Tree Lights"
                     FontSize="40"
-                    FontFamily="Consolas"
+                    FontFamily="Century Gothic"
                     Foreground="{StaticResource PrimaryWhiteBrush}"
-                    HorizontalAlignment="Left"
-                    TextAlignment="Center" Margin="65,0,0,0"/>
+                    HorizontalAlignment="Center"
+                    TextAlignment="Center"/>
             </Border>
 
-            <Image
+            <Image 
+                Grid.Row="2"
                 Source="/Images/Circuit Christmas Tree.png"
                 Height="300"
                 VerticalAlignment="Center"
-                HorizontalAlignment="Left" Margin="335,0,0,0"/>
+                HorizontalAlignment="Center"/>
 
         </Grid>
     </Border>
