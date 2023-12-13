@@ -4,22 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TreeAPI;
+using TreeAPI.Config;
 
 namespace Tree_Gui.Model {
     internal static class ConnectionManager {
-        
-        static ConnectionManager() {
 
-        }
+        static Tree? tree;
 
 
         public static Animation? CurrentAnimation { get; private set; } = null; 
-        public static string Path { get; set; } = "";
-        public static bool IsTesting { get; set; }
-        public static bool IsConnected { get; private set; }
-        public static void Connect(string IP, string port) {
-            IsConnected = false;
-            throw new NotImplementedException("Cannot connect to the tree because the its not implemented");
+        public static string Path { get; private set; } = "";
+        public static bool IsTesting { get; private set; }
+        public static bool? IsConnected { get => tree?.IsConnected; }
+        public static void Connect(string IP, int port) {
+            ConfigManager.IP = IP;
+            ConfigManager.Port = port;
+
+            tree = new Tree();
         }
     }
 }

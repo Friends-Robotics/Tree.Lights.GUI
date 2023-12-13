@@ -97,7 +97,9 @@ public partial class formMainMenu : Form {
     }
 
     private void DisplayUserForm(Form form) {
-        SubForm = form;
+        SubForm = (Form?)form;
+
+        if (SubForm is null) return;
 
         // Setup form display settings
         SubForm.TopLevel = false;
@@ -129,7 +131,7 @@ public partial class formMainMenu : Form {
 
     private void miScan_MenuClick(object sender, EventArgs e) {
         MinimiseMenu();
-        if (SubForm is not formScanWelcome) DisplayUserForm(new formScanWelcome());
+        if (SubForm is not formScan) DisplayUserForm(new formScan());
     }
 
     private void miTree_MenuClick(object sender, EventArgs e) {
@@ -139,6 +141,7 @@ public partial class formMainMenu : Form {
 
     private void miConfig_MenuClick(object sender, EventArgs e) {
         MinimiseMenu();
+
         if (SubForm is not formConfig) DisplayUserForm(new formConfig());
     }
 

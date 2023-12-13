@@ -117,11 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblInfo.Text" xml:space="preserve">
-    <value>To scan the tree connect, then click the button below. Before scanning please note...
-
-- Your laptop must be stationary throughout the process
-- Ensure the room is dark with limited reflective surfaces
-</value>
-  </data>
 </root>

@@ -5,12 +5,18 @@ namespace Tree_Gui.View;
 public partial class formHome : Form, MenuSubView {
     public formHome() {
         InitializeComponent();
-
-        lblStatus.Text = "Status : " + (ConnectionManager.IsConnected ? "Connected" : "Disconnected");
-        lblPath.Text = "Path : " + (ConnectionManager.IsConnected ? "" : ConnectionManager.Path);
-        lblActive.Text = "State : ";
     }
 
+    public void MenuEnter() {
+        lblStatus.Text = "Connection status : " + ConnectionManager.IsConnected switch {
+            null or false => "Disconnected",
+            true => "Connected"
+        };
+
+        lblPath.Text = "Path : " + ConnectionManager.Path;
+        lblActive.Text = "State : " + ConnectionManager.IsConnected is null || ConnectionManager.IsConnected == false ? "" :
+           ConnectionManager.CurrentAnimation is null ? "Idle" : "Playing";
+    }
     public bool CanExit() => true;
     public void Exit() { }
 
