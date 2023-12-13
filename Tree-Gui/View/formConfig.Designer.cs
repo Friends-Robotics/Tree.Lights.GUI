@@ -24,17 +24,17 @@
         /// </summary>
         private void InitializeComponent() {
             pnlLevel = new Custom_Controls.CustomRectangle();
+            customTextbox1 = new Custom_Controls.CustomTextbox();
             lblStatusTitle = new Label();
             lblTitle = new Label();
             customRectangle1 = new Custom_Controls.CustomRectangle();
+            customTextbox3 = new Custom_Controls.CustomTextbox();
             label1 = new Label();
             customRectangle2 = new Custom_Controls.CustomRectangle();
+            picTestingCheckbox = new Custom_Controls.PicturePanel();
             label2 = new Label();
             lblInfo = new Label();
-            customTextbox1 = new Custom_Controls.CustomTextbox();
-            customTextbox3 = new Custom_Controls.CustomTextbox();
             customButton1 = new Custom_Controls.CustomButton();
-            picturePanel1 = new Custom_Controls.PicturePanel();
             pnlLevel.SuspendLayout();
             customRectangle1.SuspendLayout();
             customRectangle2.SuspendLayout();
@@ -54,6 +54,27 @@
             pnlLevel.Size = new Size(728, 100);
             pnlLevel.TabIndex = 1;
             pnlLevel.Text = "customRectangle1";
+            // 
+            // customTextbox1
+            // 
+            customTextbox1.BackColor = Color.FromArgb(18, 17, 19);
+            customTextbox1.BorderColor = Color.White;
+            customTextbox1.BorderFocusColor = Color.White;
+            customTextbox1.BorderSize = 4;
+            customTextbox1.CustomBorderStyle = Custom_Controls.CustomTextbox.CustomTextboxBorderStyle.Underlined;
+            customTextbox1.Font = new Font("Bahnschrift", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextbox1.ForeColor = Color.White;
+            customTextbox1.IsMultiline = false;
+            customTextbox1.Location = new Point(230, 26);
+            customTextbox1.Margin = new Padding(25);
+            customTextbox1.Name = "customTextbox1";
+            customTextbox1.Padding = new Padding(7);
+            customTextbox1.PlaceholderText = "";
+            customTextbox1.PlaceholderTextColor = Color.White;
+            customTextbox1.ShortcutEnabled = true;
+            customTextbox1.Size = new Size(473, 49);
+            customTextbox1.TabIndex = 3;
+            customTextbox1.UsePasswordChar = false;
             // 
             // lblStatusTitle
             // 
@@ -97,6 +118,27 @@
             customRectangle1.TabIndex = 1;
             customRectangle1.Text = "customRectangle1";
             // 
+            // customTextbox3
+            // 
+            customTextbox3.BackColor = Color.FromArgb(18, 17, 19);
+            customTextbox3.BorderColor = Color.White;
+            customTextbox3.BorderFocusColor = Color.White;
+            customTextbox3.BorderSize = 4;
+            customTextbox3.CustomBorderStyle = Custom_Controls.CustomTextbox.CustomTextboxBorderStyle.Underlined;
+            customTextbox3.Font = new Font("Bahnschrift", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextbox3.ForeColor = Color.White;
+            customTextbox3.IsMultiline = false;
+            customTextbox3.Location = new Point(165, 25);
+            customTextbox3.Margin = new Padding(25);
+            customTextbox3.Name = "customTextbox3";
+            customTextbox3.Padding = new Padding(7);
+            customTextbox3.PlaceholderText = "";
+            customTextbox3.PlaceholderTextColor = Color.White;
+            customTextbox3.ShortcutEnabled = true;
+            customTextbox3.Size = new Size(538, 49);
+            customTextbox3.TabIndex = 4;
+            customTextbox3.UsePasswordChar = false;
+            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Left;
@@ -116,7 +158,7 @@
             customRectangle2.BackColor = Color.FromArgb(18, 17, 19);
             customRectangle2.BorderColor = Color.White;
             customRectangle2.BorderWidth = 0;
-            customRectangle2.Controls.Add(picturePanel1);
+            customRectangle2.Controls.Add(picTestingCheckbox);
             customRectangle2.Controls.Add(label2);
             customRectangle2.CornerRadius = 20;
             customRectangle2.Location = new Point(29, 627);
@@ -125,6 +167,16 @@
             customRectangle2.Size = new Size(277, 100);
             customRectangle2.TabIndex = 1;
             customRectangle2.Text = "customRectangle1";
+            // 
+            // picTestingCheckbox
+            // 
+            picTestingCheckbox.Image = Resources.Icons.dot_circle__1_;
+            picTestingCheckbox.ImagePortion = new Rectangle(0, 0, 512, 512);
+            picTestingCheckbox.Location = new Point(198, 32);
+            picTestingCheckbox.Name = "picTestingCheckbox";
+            picTestingCheckbox.Size = new Size(40, 40);
+            picTestingCheckbox.TabIndex = 8;
+            picTestingCheckbox.Click += picTestingCheckbox_Click;
             // 
             // label2
             // 
@@ -154,48 +206,6 @@
             lblInfo.TabIndex = 6;
             lblInfo.Text = "Setup the following parameters then click connect to setup the tree connection";
             // 
-            // customTextbox1
-            // 
-            customTextbox1.BackColor = Color.FromArgb(18, 17, 19);
-            customTextbox1.BorderColor = Color.White;
-            customTextbox1.BorderFocusColor = Color.White;
-            customTextbox1.BorderSize = 4;
-            customTextbox1.CustomBorderStyle = Custom_Controls.CustomTextbox.CustomTextboxBorderStyle.Underlined;
-            customTextbox1.Font = new Font("Bahnschrift", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextbox1.ForeColor = Color.White;
-            customTextbox1.IsMultiline = false;
-            customTextbox1.Location = new Point(230, 26);
-            customTextbox1.Margin = new Padding(25);
-            customTextbox1.Name = "customTextbox1";
-            customTextbox1.Padding = new Padding(7);
-            customTextbox1.PlaceholderText = "";
-            customTextbox1.PlaceholderTextColor = Color.White;
-            customTextbox1.ShortcutEnabled = true;
-            customTextbox1.Size = new Size(473, 49);
-            customTextbox1.TabIndex = 3;
-            customTextbox1.UsePasswordChar = false;
-            // 
-            // customTextbox3
-            // 
-            customTextbox3.BackColor = Color.FromArgb(18, 17, 19);
-            customTextbox3.BorderColor = Color.White;
-            customTextbox3.BorderFocusColor = Color.White;
-            customTextbox3.BorderSize = 4;
-            customTextbox3.CustomBorderStyle = Custom_Controls.CustomTextbox.CustomTextboxBorderStyle.Underlined;
-            customTextbox3.Font = new Font("Bahnschrift", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextbox3.ForeColor = Color.White;
-            customTextbox3.IsMultiline = false;
-            customTextbox3.Location = new Point(165, 25);
-            customTextbox3.Margin = new Padding(25);
-            customTextbox3.Name = "customTextbox3";
-            customTextbox3.Padding = new Padding(7);
-            customTextbox3.PlaceholderText = "";
-            customTextbox3.PlaceholderTextColor = Color.White;
-            customTextbox3.ShortcutEnabled = true;
-            customTextbox3.Size = new Size(538, 49);
-            customTextbox3.TabIndex = 4;
-            customTextbox3.UsePasswordChar = false;
-            // 
             // customButton1
             // 
             customButton1.BackColor = Color.FromArgb(18, 17, 19);
@@ -212,16 +222,7 @@
             customButton1.TabIndex = 7;
             customButton1.Text = "Connect";
             customButton1.UseVisualStyleBackColor = false;
-            // 
-            // picturePanel1
-            // 
-            picturePanel1.Image = null;
-            picturePanel1.ImagePortion = null;
-            picturePanel1.Location = new Point(185, 21);
-            picturePanel1.Name = "picturePanel1";
-            picturePanel1.Size = new Size(60, 60);
-            picturePanel1.TabIndex = 8;
-            picturePanel1.Text = "picturePanel1";
+            customButton1.Click += customButton1_Click;
             // 
             // formConfig
             // 
@@ -261,6 +262,6 @@
         private Custom_Controls.CustomTextbox customTextbox1;
         private Custom_Controls.CustomTextbox customTextbox3;
         private Custom_Controls.CustomButton customButton1;
-        private Custom_Controls.PicturePanel picturePanel1;
+        private Custom_Controls.PicturePanel picTestingCheckbox;
     }
 }

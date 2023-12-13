@@ -1,5 +1,5 @@
 ﻿namespace Tree_Gui.View {
-    partial class formScan {
+    partial class formScanWelcome {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,11 +23,10 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formScanWelcome));
             lblTitle = new Label();
-            customRectangle2 = new Custom_Controls.CustomRectangle();
-            label2 = new Label();
             lblInfo = new Label();
-            customRectangle2.SuspendLayout();
+            btnStartScan = new Custom_Controls.CustomButton();
             SuspendLayout();
             // 
             // lblTitle
@@ -44,35 +43,6 @@
             lblTitle.TabIndex = 3;
             lblTitle.Text = "Tree Lights";
             // 
-            // customRectangle2
-            // 
-            customRectangle2.Anchor = AnchorStyles.None;
-            customRectangle2.BackColor = Color.FromArgb(18, 17, 19);
-            customRectangle2.BorderColor = Color.White;
-            customRectangle2.BorderWidth = 0;
-            customRectangle2.Controls.Add(label2);
-            customRectangle2.CornerRadius = 20;
-            customRectangle2.Location = new Point(374, 308);
-            customRectangle2.Margin = new Padding(25);
-            customRectangle2.Name = "customRectangle2";
-            customRectangle2.Size = new Size(411, 100);
-            customRectangle2.TabIndex = 1;
-            customRectangle2.Text = "customRectangle1";
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoEllipsis = true;
-            label2.AutoSize = true;
-            label2.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(25, 33);
-            label2.Margin = new Padding(25);
-            label2.Name = "label2";
-            label2.Size = new Size(105, 33);
-            label2.TabIndex = 2;
-            label2.Text = "Active";
-            // 
             // lblInfo
             // 
             lblInfo.Anchor = AnchorStyles.None;
@@ -82,35 +52,50 @@
             lblInfo.ForeColor = Color.White;
             lblInfo.Location = new Point(34, 131);
             lblInfo.Margin = new Padding(25);
-            lblInfo.MaximumSize = new Size(1075, 100);
+            lblInfo.MaximumSize = new Size(1075, 300);
             lblInfo.MinimumSize = new Size(0, 100);
             lblInfo.Name = "lblInfo";
-            lblInfo.Size = new Size(1035, 100);
+            lblInfo.Size = new Size(1065, 165);
             lblInfo.TabIndex = 6;
-            lblInfo.Text = "Welcome! This application is designed to make it easier to interact with the tree. To setup a connection go to the config menu\r\n\r\n";
+            lblInfo.Text = resources.GetString("lblInfo.Text");
             // 
-            // formPlay
+            // btnStartScan
+            // 
+            btnStartScan.BackColor = Color.FromArgb(18, 17, 19);
+            btnStartScan.BorderColor = Color.FromArgb(18, 17, 19);
+            btnStartScan.BorderWidth = 4;
+            btnStartScan.CornerRadius = 20;
+            btnStartScan.FlatAppearance.BorderSize = 0;
+            btnStartScan.FlatStyle = FlatStyle.Flat;
+            btnStartScan.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnStartScan.ForeColor = Color.White;
+            btnStartScan.Location = new Point(448, 437);
+            btnStartScan.Name = "btnStartScan";
+            btnStartScan.Size = new Size(248, 100);
+            btnStartScan.TabIndex = 8;
+            btnStartScan.Text = "Begin scan";
+            btnStartScan.UseVisualStyleBackColor = false;
+            // 
+            // formScanWelcome
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 39, 37);
             ClientSize = new Size(1125, 900);
+            Controls.Add(btnStartScan);
             Controls.Add(lblInfo);
             Controls.Add(lblTitle);
-            Controls.Add(customRectangle2);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "formPlay";
+            Name = "formScan";
             Text = "formUserHome";
-            customRectangle2.ResumeLayout(false);
-            customRectangle2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
+
         private Label lblTitle;
-        private Custom_Controls.CustomRectangle customRectangle2;
-        private Label label2;
         private Label lblInfo;
+        private Custom_Controls.CustomButton btnStartScan;
     }
 }

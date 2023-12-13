@@ -120,4 +120,11 @@ public partial class PictureFrame : Control {
         graphics.SmoothingMode = SmoothingMode.None;
         graphics.DrawEllipse(backingPen, DisplayRectangle);
     }
+
+    [Flags]
+    public enum BorderStyle {
+        None,
+        Rectangle,
+        Ellipse
+    }
 }

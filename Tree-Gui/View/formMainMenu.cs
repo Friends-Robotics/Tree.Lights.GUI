@@ -10,6 +10,8 @@ public partial class formMainMenu : Form {
     private Form? _subForm;
     private int? _subFormBaseHeight;
 
+    private List<MenuSubView> _menuSubViews;
+
     private Form? SubForm {
         get => _subForm;
         set {
@@ -29,6 +31,13 @@ public partial class formMainMenu : Form {
         DoubleBuffered = true;
 
         DisplayUserForm(new formHome());
+
+        //_menuSubViews = new List<MenuSubView>() {x\S
+        //    new formHome(),
+        //    new formConfig(),
+        //    new formPlay(),
+        //    new formScanWelcome()
+        //};
 
         // Call the OnResize event to ensure that the form is formatted correctly
         OnResize(EventArgs.Empty);
@@ -120,7 +129,7 @@ public partial class formMainMenu : Form {
 
     private void miScan_MenuClick(object sender, EventArgs e) {
         MinimiseMenu();
-        if (SubForm is not formScan) DisplayUserForm(new formScan());
+        if (SubForm is not formScanWelcome) DisplayUserForm(new formScanWelcome());
     }
 
     private void miTree_MenuClick(object sender, EventArgs e) {
@@ -150,4 +159,6 @@ public partial class formMainMenu : Form {
         SubForm.Location = new Point(_menuMinimised ? -125 : 0, -sb.Value);
         Refresh();
     }
+
+
 }

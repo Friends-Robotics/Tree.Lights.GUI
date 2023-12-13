@@ -23,48 +23,48 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            pnlLevel = new Custom_Controls.CustomRectangle();
-            lblStatusTitle = new Label();
+            pnlStatus = new Custom_Controls.CustomRectangle();
+            lblStatus = new Label();
             picLogo = new Custom_Controls.PicturePanel();
             lblTitle = new Label();
-            customRectangle1 = new Custom_Controls.CustomRectangle();
-            label1 = new Label();
-            customRectangle2 = new Custom_Controls.CustomRectangle();
-            label2 = new Label();
+            pnlPath = new Custom_Controls.CustomRectangle();
+            lblPath = new Label();
+            pnlActive = new Custom_Controls.CustomRectangle();
+            lblActive = new Label();
             lblInfo = new Label();
-            pnlLevel.SuspendLayout();
-            customRectangle1.SuspendLayout();
-            customRectangle2.SuspendLayout();
+            pnlStatus.SuspendLayout();
+            pnlPath.SuspendLayout();
+            pnlActive.SuspendLayout();
             SuspendLayout();
             // 
-            // pnlLevel
+            // pnlStatus
             // 
-            pnlLevel.Anchor = AnchorStyles.None;
-            pnlLevel.BackColor = Color.FromArgb(18, 17, 19);
-            pnlLevel.BorderColor = Color.White;
-            pnlLevel.BorderWidth = 0;
-            pnlLevel.Controls.Add(lblStatusTitle);
-            pnlLevel.CornerRadius = 20;
-            pnlLevel.Location = new Point(596, 332);
-            pnlLevel.Margin = new Padding(25);
-            pnlLevel.Name = "pnlLevel";
-            pnlLevel.Size = new Size(411, 100);
-            pnlLevel.TabIndex = 1;
-            pnlLevel.Text = "customRectangle1";
+            pnlStatus.Anchor = AnchorStyles.None;
+            pnlStatus.BackColor = Color.FromArgb(18, 17, 19);
+            pnlStatus.BorderColor = Color.White;
+            pnlStatus.BorderWidth = 0;
+            pnlStatus.Controls.Add(lblStatus);
+            pnlStatus.CornerRadius = 20;
+            pnlStatus.Location = new Point(596, 332);
+            pnlStatus.Margin = new Padding(25);
+            pnlStatus.Name = "pnlStatus";
+            pnlStatus.Size = new Size(411, 100);
+            pnlStatus.TabIndex = 1;
+            pnlStatus.Text = "customRectangle1";
             // 
-            // lblStatusTitle
+            // lblStatus
             // 
-            lblStatusTitle.Anchor = AnchorStyles.None;
-            lblStatusTitle.AutoEllipsis = true;
-            lblStatusTitle.AutoSize = true;
-            lblStatusTitle.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStatusTitle.ForeColor = Color.White;
-            lblStatusTitle.Location = new Point(25, 33);
-            lblStatusTitle.Margin = new Padding(25);
-            lblStatusTitle.Name = "lblStatusTitle";
-            lblStatusTitle.Size = new Size(150, 33);
-            lblStatusTitle.TabIndex = 2;
-            lblStatusTitle.Text = "Status : ";
+            lblStatus.Anchor = AnchorStyles.None;
+            lblStatus.AutoEllipsis = true;
+            lblStatus.AutoSize = true;
+            lblStatus.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lblStatus.ForeColor = Color.White;
+            lblStatus.Location = new Point(25, 33);
+            lblStatus.Margin = new Padding(25);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(150, 33);
+            lblStatus.TabIndex = 2;
+            lblStatus.Text = "Status : ";
             // 
             // picLogo
             // 
@@ -92,63 +92,63 @@
             lblTitle.TabIndex = 3;
             lblTitle.Text = "Tree Lights";
             // 
-            // customRectangle1
+            // pnlPath
             // 
-            customRectangle1.Anchor = AnchorStyles.None;
-            customRectangle1.BackColor = Color.FromArgb(18, 17, 19);
-            customRectangle1.BorderColor = Color.White;
-            customRectangle1.BorderWidth = 0;
-            customRectangle1.Controls.Add(label1);
-            customRectangle1.CornerRadius = 20;
-            customRectangle1.Location = new Point(596, 482);
-            customRectangle1.Margin = new Padding(25);
-            customRectangle1.Name = "customRectangle1";
-            customRectangle1.Size = new Size(411, 100);
-            customRectangle1.TabIndex = 1;
-            customRectangle1.Text = "customRectangle1";
+            pnlPath.Anchor = AnchorStyles.None;
+            pnlPath.BackColor = Color.FromArgb(18, 17, 19);
+            pnlPath.BorderColor = Color.White;
+            pnlPath.BorderWidth = 0;
+            pnlPath.Controls.Add(lblPath);
+            pnlPath.CornerRadius = 20;
+            pnlPath.Location = new Point(596, 482);
+            pnlPath.Margin = new Padding(25);
+            pnlPath.Name = "pnlPath";
+            pnlPath.Size = new Size(411, 100);
+            pnlPath.TabIndex = 1;
+            pnlPath.Text = "customRectangle1";
             // 
-            // label1
+            // lblPath
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoEllipsis = true;
-            label1.AutoSize = true;
-            label1.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(25, 33);
-            label1.Margin = new Padding(25);
-            label1.Name = "label1";
-            label1.Size = new Size(105, 33);
-            label1.TabIndex = 2;
-            label1.Text = "Path :";
+            lblPath.Anchor = AnchorStyles.None;
+            lblPath.AutoEllipsis = true;
+            lblPath.AutoSize = true;
+            lblPath.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPath.ForeColor = Color.White;
+            lblPath.Location = new Point(25, 33);
+            lblPath.Margin = new Padding(25);
+            lblPath.Name = "lblPath";
+            lblPath.Size = new Size(105, 33);
+            lblPath.TabIndex = 2;
+            lblPath.Text = "Path :";
             // 
-            // customRectangle2
+            // pnlActive
             // 
-            customRectangle2.Anchor = AnchorStyles.None;
-            customRectangle2.BackColor = Color.FromArgb(18, 17, 19);
-            customRectangle2.BorderColor = Color.White;
-            customRectangle2.BorderWidth = 0;
-            customRectangle2.Controls.Add(label2);
-            customRectangle2.CornerRadius = 20;
-            customRectangle2.Location = new Point(596, 632);
-            customRectangle2.Margin = new Padding(25);
-            customRectangle2.Name = "customRectangle2";
-            customRectangle2.Size = new Size(411, 100);
-            customRectangle2.TabIndex = 1;
-            customRectangle2.Text = "customRectangle1";
+            pnlActive.Anchor = AnchorStyles.None;
+            pnlActive.BackColor = Color.FromArgb(18, 17, 19);
+            pnlActive.BorderColor = Color.White;
+            pnlActive.BorderWidth = 0;
+            pnlActive.Controls.Add(lblActive);
+            pnlActive.CornerRadius = 20;
+            pnlActive.Location = new Point(596, 632);
+            pnlActive.Margin = new Padding(25);
+            pnlActive.Name = "pnlActive";
+            pnlActive.Size = new Size(411, 100);
+            pnlActive.TabIndex = 1;
+            pnlActive.Text = "customRectangle1";
             // 
-            // label2
+            // lblActive
             // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoEllipsis = true;
-            label2.AutoSize = true;
-            label2.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(25, 33);
-            label2.Margin = new Padding(25);
-            label2.Name = "label2";
-            label2.Size = new Size(105, 33);
-            label2.TabIndex = 2;
-            label2.Text = "Active";
+            lblActive.Anchor = AnchorStyles.None;
+            lblActive.AutoEllipsis = true;
+            lblActive.AutoSize = true;
+            lblActive.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lblActive.ForeColor = Color.White;
+            lblActive.Location = new Point(25, 33);
+            lblActive.Margin = new Padding(25);
+            lblActive.Name = "lblActive";
+            lblActive.Size = new Size(135, 33);
+            lblActive.TabIndex = 2;
+            lblActive.Text = "Active :";
             // 
             // lblInfo
             // 
@@ -175,33 +175,32 @@
             Controls.Add(lblInfo);
             Controls.Add(lblTitle);
             Controls.Add(picLogo);
-            Controls.Add(customRectangle2);
-            Controls.Add(customRectangle1);
-            Controls.Add(pnlLevel);
+            Controls.Add(pnlActive);
+            Controls.Add(pnlPath);
+            Controls.Add(pnlStatus);
             FormBorderStyle = FormBorderStyle.None;
             Name = "formHome";
             Text = "formUserHome";
-            Load += formHome_Load;
-            pnlLevel.ResumeLayout(false);
-            pnlLevel.PerformLayout();
-            customRectangle1.ResumeLayout(false);
-            customRectangle1.PerformLayout();
-            customRectangle2.ResumeLayout(false);
-            customRectangle2.PerformLayout();
+            pnlStatus.ResumeLayout(false);
+            pnlStatus.PerformLayout();
+            pnlPath.ResumeLayout(false);
+            pnlPath.PerformLayout();
+            pnlActive.ResumeLayout(false);
+            pnlActive.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Custom_Controls.CustomRectangle pnlLevel;
-        private Label lblStatusTitle;
+        private Custom_Controls.CustomRectangle pnlStatus;
+        private Label lblStatus;
         private Custom_Controls.PicturePanel picLogo;
         private Label lblTitle;
-        private Custom_Controls.CustomRectangle customRectangle1;
-        private Label label1;
-        private Custom_Controls.CustomRectangle customRectangle2;
-        private Label label2;
+        private Custom_Controls.CustomRectangle pnlPath;
+        private Label lblPath;
+        private Custom_Controls.CustomRectangle pnlActive;
+        private Label lblActive;
         private Label lblInfo;
     }
 }
