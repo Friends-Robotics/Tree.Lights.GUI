@@ -10,8 +10,6 @@ public partial class formMainMenu : Form {
     private Form? _subForm;
     private int? _subFormBaseHeight;
 
-    private List<MenuSubView> _menuSubViews;
-
     private Form? SubForm {
         get => _subForm;
         set {

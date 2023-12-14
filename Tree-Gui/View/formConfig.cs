@@ -21,7 +21,8 @@ namespace Tree_Gui.View {
             picTestingCheckbox.Image = IsTesting ? Resources.Icons.dot_circle : Resources.Icons.dot_circle__1_;
         }
 
-        private void customButton1_Click(object sender, EventArgs e) {
+        private void btn_Click(object sender, EventArgs e) {
+            // Test for valid inputs
 
         }
     }

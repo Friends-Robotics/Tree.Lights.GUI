@@ -45,10 +45,10 @@
             pnlStatus.BorderWidth = 0;
             pnlStatus.Controls.Add(lblStatus);
             pnlStatus.CornerRadius = 20;
-            pnlStatus.Location = new Point(596, 332);
+            pnlStatus.Location = new Point(530, 332);
             pnlStatus.Margin = new Padding(25);
             pnlStatus.Name = "pnlStatus";
-            pnlStatus.Size = new Size(411, 100);
+            pnlStatus.Size = new Size(574, 100);
             pnlStatus.TabIndex = 1;
             pnlStatus.Text = "customRectangle1";
             // 
@@ -59,7 +59,7 @@
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
             lblStatus.ForeColor = Color.White;
-            lblStatus.Location = new Point(25, 33);
+            lblStatus.Location = new Point(16, 33);
             lblStatus.Margin = new Padding(25);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(150, 33);
@@ -71,7 +71,7 @@
             picLogo.Anchor = AnchorStyles.None;
             picLogo.Image = Resources.Images.Circuit_Christmas_Tree;
             picLogo.ImagePortion = new Rectangle(0, 0, 942, 1213);
-            picLogo.Location = new Point(100, 259);
+            picLogo.Location = new Point(34, 259);
             picLogo.Margin = new Padding(25, 25, 0, 25);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(471, 607);
@@ -100,10 +100,10 @@
             pnlPath.BorderWidth = 0;
             pnlPath.Controls.Add(lblPath);
             pnlPath.CornerRadius = 20;
-            pnlPath.Location = new Point(596, 482);
+            pnlPath.Location = new Point(530, 482);
             pnlPath.Margin = new Padding(25);
             pnlPath.Name = "pnlPath";
-            pnlPath.Size = new Size(411, 100);
+            pnlPath.Size = new Size(574, 100);
             pnlPath.TabIndex = 1;
             pnlPath.Text = "customRectangle1";
             // 
@@ -114,7 +114,7 @@
             lblPath.AutoSize = true;
             lblPath.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
             lblPath.ForeColor = Color.White;
-            lblPath.Location = new Point(25, 33);
+            lblPath.Location = new Point(16, 33);
             lblPath.Margin = new Padding(25);
             lblPath.Name = "lblPath";
             lblPath.Size = new Size(105, 33);
@@ -129,10 +129,10 @@
             pnlActive.BorderWidth = 0;
             pnlActive.Controls.Add(lblActive);
             pnlActive.CornerRadius = 20;
-            pnlActive.Location = new Point(596, 632);
+            pnlActive.Location = new Point(530, 632);
             pnlActive.Margin = new Padding(25);
             pnlActive.Name = "pnlActive";
-            pnlActive.Size = new Size(411, 100);
+            pnlActive.Size = new Size(574, 100);
             pnlActive.TabIndex = 1;
             pnlActive.Text = "customRectangle1";
             // 
@@ -143,7 +143,7 @@
             lblActive.AutoSize = true;
             lblActive.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
             lblActive.ForeColor = Color.White;
-            lblActive.Location = new Point(25, 33);
+            lblActive.Location = new Point(16, 33);
             lblActive.Margin = new Padding(25);
             lblActive.Name = "lblActive";
             lblActive.Size = new Size(135, 33);

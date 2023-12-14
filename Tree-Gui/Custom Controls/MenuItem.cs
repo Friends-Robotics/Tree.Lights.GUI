@@ -23,7 +23,7 @@ public partial class MenuItem : UserControl {
         lbl.MouseLeave += ClearHighlight;
         pb.MouseLeave += ClearHighlight;
 
-        // Use mouse down event as Click event is unreliable
+        // Use mouse down event as ButtonClick event is unreliable
         MouseDown += Clicked;
         lbl.MouseDown += Clicked;
         pb.MouseDown += Clicked;

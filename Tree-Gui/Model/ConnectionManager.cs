@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TreeAPI;
 using TreeAPI.Config;
+using TreeAPI.Types;
 
 namespace Tree_Gui.Model {
     internal static class ConnectionManager {

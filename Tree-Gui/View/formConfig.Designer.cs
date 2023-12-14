@@ -24,17 +24,17 @@
         /// </summary>
         private void InitializeComponent() {
             pnlLevel = new Custom_Controls.CustomRectangle();
-            customTextbox1 = new Custom_Controls.CustomTextbox();
+            tbIp = new Custom_Controls.CustomTextbox();
             lblStatusTitle = new Label();
             lblTitle = new Label();
             customRectangle1 = new Custom_Controls.CustomRectangle();
-            customTextbox3 = new Custom_Controls.CustomTextbox();
+            tbPort = new Custom_Controls.CustomTextbox();
             label1 = new Label();
             customRectangle2 = new Custom_Controls.CustomRectangle();
             picTestingCheckbox = new Custom_Controls.PicturePanel();
             label2 = new Label();
             lblInfo = new Label();
-            customButton1 = new Custom_Controls.CustomButton();
+            btn = new Custom_Controls.CustomButton();
             pnlLevel.SuspendLayout();
             customRectangle1.SuspendLayout();
             customRectangle2.SuspendLayout();
@@ -45,7 +45,7 @@
             pnlLevel.BackColor = Color.FromArgb(18, 17, 19);
             pnlLevel.BorderColor = Color.White;
             pnlLevel.BorderWidth = 0;
-            pnlLevel.Controls.Add(customTextbox1);
+            pnlLevel.Controls.Add(tbIp);
             pnlLevel.Controls.Add(lblStatusTitle);
             pnlLevel.CornerRadius = 20;
             pnlLevel.Location = new Point(29, 327);
@@ -55,26 +55,26 @@
             pnlLevel.TabIndex = 1;
             pnlLevel.Text = "customRectangle1";
             // 
-            // customTextbox1
+            // tbIp
             // 
-            customTextbox1.BackColor = Color.FromArgb(18, 17, 19);
-            customTextbox1.BorderColor = Color.White;
-            customTextbox1.BorderFocusColor = Color.White;
-            customTextbox1.BorderSize = 4;
-            customTextbox1.CustomBorderStyle = Custom_Controls.CustomTextbox.CustomTextboxBorderStyle.Underlined;
-            customTextbox1.Font = new Font("Bahnschrift", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextbox1.ForeColor = Color.White;
-            customTextbox1.IsMultiline = false;
-            customTextbox1.Location = new Point(230, 26);
-            customTextbox1.Margin = new Padding(25);
-            customTextbox1.Name = "customTextbox1";
-            customTextbox1.Padding = new Padding(7);
-            customTextbox1.PlaceholderText = "";
-            customTextbox1.PlaceholderTextColor = Color.White;
-            customTextbox1.ShortcutEnabled = true;
-            customTextbox1.Size = new Size(473, 49);
-            customTextbox1.TabIndex = 3;
-            customTextbox1.UsePasswordChar = false;
+            tbIp.BackColor = Color.FromArgb(18, 17, 19);
+            tbIp.BorderColor = Color.White;
+            tbIp.BorderFocusColor = Color.White;
+            tbIp.BorderSize = 4;
+            tbIp.CustomBorderStyle = Custom_Controls.CustomTextbox.CustomTextboxBorderStyle.Underlined;
+            tbIp.Font = new Font("Bahnschrift", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            tbIp.ForeColor = Color.White;
+            tbIp.IsMultiline = false;
+            tbIp.Location = new Point(230, 26);
+            tbIp.Margin = new Padding(25);
+            tbIp.Name = "tbIp";
+            tbIp.Padding = new Padding(7);
+            tbIp.PlaceholderText = "";
+            tbIp.PlaceholderTextColor = Color.White;
+            tbIp.ShortcutEnabled = true;
+            tbIp.Size = new Size(473, 49);
+            tbIp.TabIndex = 3;
+            tbIp.UsePasswordChar = false;
             // 
             // lblStatusTitle
             // 
@@ -108,7 +108,7 @@
             customRectangle1.BackColor = Color.FromArgb(18, 17, 19);
             customRectangle1.BorderColor = Color.White;
             customRectangle1.BorderWidth = 0;
-            customRectangle1.Controls.Add(customTextbox3);
+            customRectangle1.Controls.Add(tbPort);
             customRectangle1.Controls.Add(label1);
             customRectangle1.CornerRadius = 20;
             customRectangle1.Location = new Point(29, 477);
@@ -118,26 +118,26 @@
             customRectangle1.TabIndex = 1;
             customRectangle1.Text = "customRectangle1";
             // 
-            // customTextbox3
+            // tbPort
             // 
-            customTextbox3.BackColor = Color.FromArgb(18, 17, 19);
-            customTextbox3.BorderColor = Color.White;
-            customTextbox3.BorderFocusColor = Color.White;
-            customTextbox3.BorderSize = 4;
-            customTextbox3.CustomBorderStyle = Custom_Controls.CustomTextbox.CustomTextboxBorderStyle.Underlined;
-            customTextbox3.Font = new Font("Bahnschrift", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextbox3.ForeColor = Color.White;
-            customTextbox3.IsMultiline = false;
-            customTextbox3.Location = new Point(165, 25);
-            customTextbox3.Margin = new Padding(25);
-            customTextbox3.Name = "customTextbox3";
-            customTextbox3.Padding = new Padding(7);
-            customTextbox3.PlaceholderText = "";
-            customTextbox3.PlaceholderTextColor = Color.White;
-            customTextbox3.ShortcutEnabled = true;
-            customTextbox3.Size = new Size(538, 49);
-            customTextbox3.TabIndex = 4;
-            customTextbox3.UsePasswordChar = false;
+            tbPort.BackColor = Color.FromArgb(18, 17, 19);
+            tbPort.BorderColor = Color.White;
+            tbPort.BorderFocusColor = Color.White;
+            tbPort.BorderSize = 4;
+            tbPort.CustomBorderStyle = Custom_Controls.CustomTextbox.CustomTextboxBorderStyle.Underlined;
+            tbPort.Font = new Font("Bahnschrift", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            tbPort.ForeColor = Color.White;
+            tbPort.IsMultiline = false;
+            tbPort.Location = new Point(165, 25);
+            tbPort.Margin = new Padding(25);
+            tbPort.Name = "tbPort";
+            tbPort.Padding = new Padding(7);
+            tbPort.PlaceholderText = "";
+            tbPort.PlaceholderTextColor = Color.White;
+            tbPort.ShortcutEnabled = true;
+            tbPort.Size = new Size(538, 49);
+            tbPort.TabIndex = 4;
+            tbPort.UsePasswordChar = false;
             // 
             // label1
             // 
@@ -206,23 +206,23 @@
             lblInfo.TabIndex = 6;
             lblInfo.Text = "Setup the following parameters then click connect to setup the tree connection";
             // 
-            // customButton1
+            // btn
             // 
-            customButton1.BackColor = Color.FromArgb(18, 17, 19);
-            customButton1.BorderColor = Color.FromArgb(18, 17, 19);
-            customButton1.BorderWidth = 4;
-            customButton1.CornerRadius = 20;
-            customButton1.FlatAppearance.BorderSize = 0;
-            customButton1.FlatStyle = FlatStyle.Flat;
-            customButton1.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            customButton1.ForeColor = Color.White;
-            customButton1.Location = new Point(509, 627);
-            customButton1.Name = "customButton1";
-            customButton1.Size = new Size(248, 100);
-            customButton1.TabIndex = 7;
-            customButton1.Text = "Connect";
-            customButton1.UseVisualStyleBackColor = false;
-            customButton1.Click += customButton1_Click;
+            btn.BackColor = Color.FromArgb(18, 17, 19);
+            btn.BorderColor = Color.FromArgb(18, 17, 19);
+            btn.BorderWidth = 4;
+            btn.CornerRadius = 20;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btn.ForeColor = Color.White;
+            btn.Location = new Point(509, 627);
+            btn.Name = "btn";
+            btn.Size = new Size(248, 100);
+            btn.TabIndex = 7;
+            btn.Text = "Connect";
+            btn.UseVisualStyleBackColor = false;
+            btn.Click += btn_Click;
             // 
             // formConfig
             // 
@@ -230,7 +230,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 39, 37);
             ClientSize = new Size(1125, 900);
-            Controls.Add(customButton1);
+            Controls.Add(btn);
             Controls.Add(lblInfo);
             Controls.Add(lblTitle);
             Controls.Add(customRectangle2);
@@ -259,9 +259,9 @@
         private Custom_Controls.CustomRectangle customRectangle2;
         private Label label2;
         private Label lblInfo;
-        private Custom_Controls.CustomTextbox customTextbox1;
-        private Custom_Controls.CustomTextbox customTextbox3;
-        private Custom_Controls.CustomButton customButton1;
+        private Custom_Controls.CustomTextbox tbIp;
+        private Custom_Controls.CustomTextbox tbPort;
+        private Custom_Controls.CustomButton btn;
         private Custom_Controls.PicturePanel picTestingCheckbox;
     }
 }
