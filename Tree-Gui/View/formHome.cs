@@ -6,24 +6,28 @@ public partial class formHome : Form {
     public formHome() {
         InitializeComponent();
 
-        lblStatus.Text = "Connection status : " + ConnectionManager.IsConnected switch {
+        lblStatus.Text = "Connection status : " + TreeManager.IsConnected switch {
             null or false => "Disconnected",
             true => "Connected"
         };
 
-        lblPath.Text = "Path : " + ConnectionManager.Path;
-        lblActive.Text = "Activity : " + (ConnectionManager.IsConnected is null || ConnectionManager.IsConnected == false ? "" :
-           ConnectionManager.CurrentAnimation is null ? "Idle" : "Playing");
+        lblPath.Text = "Path : " + TreeManager.Path;
+        lblActive.Text = "Activity : " + (TreeManager.IsConnected is null || TreeManager.IsConnected == false ? "" :
+           TreeManager.CurrentAnimation is null ? "Idle" : "Playing");
     }
 
     protected override void OnResize(EventArgs e) {
         base.OnResize(e);
 
-
         lblTitle.CenterX();
 
         lblInfo.MaximumSize = new Size(Width - 50, lblInfo.Height);
         lblInfo.CenterX();
+    }
 
+    protected override void OnMouseWheel(MouseEventArgs e) {
+        base.OnMouseWheel(e);
+
+        ((ActiveForm as formMaster)?.ChildView as formMainMenu)?.ScrollUserView(e.Delta);
     }
 }

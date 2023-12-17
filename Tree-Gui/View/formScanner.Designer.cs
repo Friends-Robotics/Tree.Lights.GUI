@@ -25,16 +25,15 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formScan));
             lblTitle = new Label();
-            pbScanView = new PictureBox();
             pnlScanViewBorder = new Custom_Controls.CustomRectangle();
+            pbScanView = new Custom_Controls.PicturePanel();
             lblInfo = new Label();
-            btn = new Custom_Controls.CustomButton();
+            btnStartScan = new Custom_Controls.CustomButton();
             pb = new Custom_Controls.CustomProgressBar();
-            btnRemark = new Custom_Controls.PictureButton();
-            btnRetake = new Custom_Controls.PictureButton();
-            btnOk = new Custom_Controls.PictureButton();
+            btnOk = new Custom_Controls.CustomButton();
             pnlButtons = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pbScanView).BeginInit();
+            btnRetake = new Custom_Controls.CustomButton();
+            btnScanTree = new Custom_Controls.CustomButton();
             pnlScanViewBorder.SuspendLayout();
             pnlButtons.SuspendLayout();
             SuspendLayout();
@@ -53,16 +52,6 @@
             lblTitle.TabIndex = 3;
             lblTitle.Text = "Tree Lights";
             // 
-            // pbScanView
-            // 
-            pbScanView.Location = new Point(10, 10);
-            pbScanView.Name = "pbScanView";
-            pbScanView.Size = new Size(600, 600);
-            pbScanView.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbScanView.TabIndex = 4;
-            pbScanView.TabStop = false;
-            pbScanView.Click += pbScanView_Click;
-            // 
             // pnlScanViewBorder
             // 
             pnlScanViewBorder.Anchor = AnchorStyles.None;
@@ -77,6 +66,19 @@
             pnlScanViewBorder.Size = new Size(620, 620);
             pnlScanViewBorder.TabIndex = 5;
             pnlScanViewBorder.Text = "customRectangle1";
+            // 
+            // pbScanView
+            // 
+            pbScanView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pbScanView.Enabled = false;
+            pbScanView.Image = null;
+            pbScanView.ImagePortion = null;
+            pbScanView.Location = new Point(10, 10);
+            pbScanView.Name = "pbScanView";
+            pbScanView.Size = new Size(600, 600);
+            pbScanView.TabIndex = 0;
+            pbScanView.Text = "picturePanel1";
+            pbScanView.Click += pbScanView_Click;
             // 
             // lblInfo
             // 
@@ -95,23 +97,26 @@
             lblInfo.Text = resources.GetString("lblInfo.Text");
             lblInfo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btn
+            // btnStartScan
             // 
-            btn.BackColor = Color.FromArgb(18, 17, 19);
-            btn.BorderColor = Color.FromArgb(18, 17, 19);
-            btn.BorderWidth = 4;
-            btn.CornerRadius = 20;
-            btn.FlatAppearance.BorderSize = 0;
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            btn.ForeColor = Color.White;
-            btn.Location = new Point(756, 681);
-            btn.Name = "btn";
-            btn.Size = new Size(248, 100);
-            btn.TabIndex = 11;
-            btn.Text = "Start Scan";
-            btn.UseVisualStyleBackColor = false;
-            btn.Click += btnStartScan_Click;
+            btnStartScan.Anchor = AnchorStyles.None;
+            btnStartScan.BackColor = Color.FromArgb(18, 17, 19);
+            btnStartScan.BorderColor = Color.FromArgb(18, 17, 19);
+            btnStartScan.BorderWidth = 4;
+            btnStartScan.CornerRadius = 20;
+            btnStartScan.FlatAppearance.BorderSize = 0;
+            btnStartScan.FlatStyle = FlatStyle.Flat;
+            btnStartScan.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnStartScan.ForeColor = Color.White;
+            btnStartScan.Image = null;
+            btnStartScan.ImageSize = new Size(0, 0);
+            btnStartScan.Location = new Point(757, 664);
+            btnStartScan.Name = "btnStartScan";
+            btnStartScan.Size = new Size(248, 100);
+            btnStartScan.TabIndex = 11;
+            btnStartScan.Text = "Start Scan";
+            btnStartScan.UseVisualStyleBackColor = false;
+            btnStartScan.Click += btnStartScan_Click;
             // 
             // pb
             // 
@@ -128,51 +133,78 @@
             pb.Text = "customProgressBar1";
             pb.Visible = false;
             // 
-            // btnRemark
-            // 
-            btnRemark.BackColor = Color.FromArgb(34, 39, 37);
-            btnRemark.Image = (Image)resources.GetObject("btnRemark.Image");
-            btnRemark.ImagePortion = new Rectangle(-100, -100, 712, 712);
-            btnRemark.Location = new Point(120, 0);
-            btnRemark.Margin = new Padding(10);
-            btnRemark.Name = "btnRemark";
-            btnRemark.Size = new Size(100, 100);
-            btnRemark.TabIndex = 13;
-            btnRemark.Click += btnRemark_Click;
-            // 
-            // btnRetake
-            // 
-            btnRetake.BackColor = Color.FromArgb(34, 39, 37);
-            btnRetake.Image = Resources.Icons.camera_rotate;
-            btnRetake.ImagePortion = new Rectangle(-100, -100, 712, 712);
-            btnRetake.Location = new Point(0, 0);
-            btnRetake.Margin = new Padding(10);
-            btnRetake.Name = "btnRetake";
-            btnRetake.Size = new Size(100, 100);
-            btnRetake.TabIndex = 14;
-            btnRetake.Click += btnRetake_Click;
-            // 
             // btnOk
             // 
-            btnOk.BackColor = Color.FromArgb(34, 39, 37);
+            btnOk.BackColor = Color.FromArgb(18, 17, 19);
+            btnOk.BorderColor = Color.FromArgb(18, 17, 19);
+            btnOk.BorderWidth = 4;
+            btnOk.CornerRadius = 20;
+            btnOk.FlatAppearance.BorderSize = 0;
+            btnOk.FlatStyle = FlatStyle.Flat;
+            btnOk.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnOk.ForeColor = Color.White;
             btnOk.Image = Resources.Icons.check;
-            btnOk.ImagePortion = new Rectangle(-100, -100, 712, 712);
-            btnOk.Location = new Point(240, 0);
-            btnOk.Margin = new Padding(10);
+            btnOk.ImageSize = new Size(50, 50);
+            btnOk.Location = new Point(0, 0);
+            btnOk.Margin = new Padding(25);
             btnOk.Name = "btnOk";
             btnOk.Size = new Size(100, 100);
-            btnOk.TabIndex = 15;
+            btnOk.TabIndex = 11;
+            btnOk.UseVisualStyleBackColor = false;
             btnOk.Click += btnOk_Click;
             // 
             // pnlButtons
             // 
+            pnlButtons.Anchor = AnchorStyles.None;
             pnlButtons.Controls.Add(btnRetake);
             pnlButtons.Controls.Add(btnOk);
-            pnlButtons.Controls.Add(btnRemark);
-            pnlButtons.Location = new Point(709, 664);
+            pnlButtons.Location = new Point(770, 664);
             pnlButtons.Name = "pnlButtons";
-            pnlButtons.Size = new Size(340, 100);
-            pnlButtons.TabIndex = 16;
+            pnlButtons.Size = new Size(220, 100);
+            pnlButtons.TabIndex = 13;
+            pnlButtons.Visible = false;
+            // 
+            // btnRetake
+            // 
+            btnRetake.BackColor = Color.FromArgb(18, 17, 19);
+            btnRetake.BorderColor = Color.FromArgb(18, 17, 19);
+            btnRetake.BorderWidth = 4;
+            btnRetake.CornerRadius = 20;
+            btnRetake.FlatAppearance.BorderSize = 0;
+            btnRetake.FlatStyle = FlatStyle.Flat;
+            btnRetake.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRetake.ForeColor = Color.White;
+            btnRetake.Image = Resources.Icons.camera_rotate;
+            btnRetake.ImageSize = new Size(50, 50);
+            btnRetake.Location = new Point(115, 0);
+            btnRetake.Margin = new Padding(25);
+            btnRetake.Name = "btnRetake";
+            btnRetake.Size = new Size(100, 100);
+            btnRetake.TabIndex = 11;
+            btnRetake.UseVisualStyleBackColor = false;
+            btnRetake.Click += btnRetake_Click;
+            // 
+            // btnScanTree
+            // 
+            btnScanTree.Anchor = AnchorStyles.None;
+            btnScanTree.BackColor = Color.FromArgb(18, 17, 19);
+            btnScanTree.BorderColor = Color.FromArgb(18, 17, 19);
+            btnScanTree.BorderWidth = 4;
+            btnScanTree.CornerRadius = 20;
+            btnScanTree.FlatAppearance.BorderSize = 0;
+            btnScanTree.FlatStyle = FlatStyle.Flat;
+            btnScanTree.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnScanTree.ForeColor = Color.White;
+            btnScanTree.Image = null;
+            btnScanTree.ImageSize = new Size(0, 0);
+            btnScanTree.Location = new Point(757, 664);
+            btnScanTree.Name = "btnScanTree";
+            btnScanTree.Size = new Size(248, 100);
+            btnScanTree.TabIndex = 11;
+            btnScanTree.Text = "Scan Tree";
+            btnScanTree.UseVisualStyleBackColor = false;
+            btnScanTree.Visible = false;
+            btnScanTree.Click += btnScanTree_Click;
             // 
             // formScan
             // 
@@ -180,16 +212,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 39, 37);
             ClientSize = new Size(1125, 900);
-            Controls.Add(btn);
-            Controls.Add(pnlButtons);
             Controls.Add(pb);
             Controls.Add(lblInfo);
             Controls.Add(pnlScanViewBorder);
             Controls.Add(lblTitle);
+            Controls.Add(btnStartScan);
+            Controls.Add(pnlButtons);
+            Controls.Add(btnScanTree);
             FormBorderStyle = FormBorderStyle.None;
             Name = "formScan";
             Text = "formUserHome";
-            ((System.ComponentModel.ISupportInitialize)pbScanView).EndInit();
             pnlScanViewBorder.ResumeLayout(false);
             pnlButtons.ResumeLayout(false);
             ResumeLayout(false);
@@ -199,14 +231,14 @@
         #endregion
 
         private Label lblTitle;
-        private PictureBox pbScanView;
         private Custom_Controls.CustomRectangle pnlScanViewBorder;
         private Label lblInfo;
-        private Custom_Controls.CustomButton btn;
+        private Custom_Controls.CustomButton btnStartScan;
         private Custom_Controls.CustomProgressBar pb;
-        private Custom_Controls.PictureButton btnRemark;
-        private Custom_Controls.PictureButton btnRetake;
-        private Custom_Controls.PictureButton btnOk;
+        private Custom_Controls.PicturePanel pbScanView;
+        private Custom_Controls.CustomButton btnOk;
         private Panel pnlButtons;
+        private Custom_Controls.CustomButton btnRetake;
+        private Custom_Controls.CustomButton btnScanTree;
     }
 }

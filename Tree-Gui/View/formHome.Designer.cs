@@ -32,20 +32,23 @@
             pnlActive = new Custom_Controls.CustomRectangle();
             lblActive = new Label();
             lblInfo = new Label();
+            tbConsole = new RichTextBox();
+            pnlConsole = new Custom_Controls.CustomRectangle();
             pnlStatus.SuspendLayout();
             pnlPath.SuspendLayout();
             pnlActive.SuspendLayout();
+            pnlConsole.SuspendLayout();
             SuspendLayout();
             // 
             // pnlStatus
             // 
-            pnlStatus.Anchor = AnchorStyles.None;
+            pnlStatus.Anchor = AnchorStyles.Top;
             pnlStatus.BackColor = Color.FromArgb(18, 17, 19);
             pnlStatus.BorderColor = Color.White;
             pnlStatus.BorderWidth = 0;
             pnlStatus.Controls.Add(lblStatus);
             pnlStatus.CornerRadius = 20;
-            pnlStatus.Location = new Point(530, 332);
+            pnlStatus.Location = new Point(474, 332);
             pnlStatus.Margin = new Padding(25);
             pnlStatus.Name = "pnlStatus";
             pnlStatus.Size = new Size(574, 100);
@@ -68,10 +71,10 @@
             // 
             // picLogo
             // 
-            picLogo.Anchor = AnchorStyles.None;
+            picLogo.Anchor = AnchorStyles.Top;
             picLogo.Image = Resources.Images.Circuit_Christmas_Tree;
             picLogo.ImagePortion = new Rectangle(0, 0, 942, 1213);
-            picLogo.Location = new Point(34, 259);
+            picLogo.Location = new Point(9, 259);
             picLogo.Margin = new Padding(25, 25, 0, 25);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(471, 607);
@@ -80,12 +83,12 @@
             // 
             // lblTitle
             // 
-            lblTitle.Anchor = AnchorStyles.None;
+            lblTitle.Anchor = AnchorStyles.Top;
             lblTitle.AutoEllipsis = true;
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Consolas", 20F, FontStyle.Regular, GraphicsUnit.Point);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(408, 34);
+            lblTitle.Location = new Point(383, 34);
             lblTitle.Margin = new Padding(25);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(262, 47);
@@ -94,13 +97,13 @@
             // 
             // pnlPath
             // 
-            pnlPath.Anchor = AnchorStyles.None;
+            pnlPath.Anchor = AnchorStyles.Top;
             pnlPath.BackColor = Color.FromArgb(18, 17, 19);
             pnlPath.BorderColor = Color.White;
             pnlPath.BorderWidth = 0;
             pnlPath.Controls.Add(lblPath);
             pnlPath.CornerRadius = 20;
-            pnlPath.Location = new Point(530, 482);
+            pnlPath.Location = new Point(474, 482);
             pnlPath.Margin = new Padding(25);
             pnlPath.Name = "pnlPath";
             pnlPath.Size = new Size(574, 100);
@@ -123,13 +126,13 @@
             // 
             // pnlActive
             // 
-            pnlActive.Anchor = AnchorStyles.None;
+            pnlActive.Anchor = AnchorStyles.Top;
             pnlActive.BackColor = Color.FromArgb(18, 17, 19);
             pnlActive.BorderColor = Color.White;
             pnlActive.BorderWidth = 0;
             pnlActive.Controls.Add(lblActive);
             pnlActive.CornerRadius = 20;
-            pnlActive.Location = new Point(530, 632);
+            pnlActive.Location = new Point(474, 632);
             pnlActive.Margin = new Padding(25);
             pnlActive.Name = "pnlActive";
             pnlActive.Size = new Size(574, 100);
@@ -152,12 +155,12 @@
             // 
             // lblInfo
             // 
-            lblInfo.Anchor = AnchorStyles.None;
+            lblInfo.Anchor = AnchorStyles.Top;
             lblInfo.AutoEllipsis = true;
             lblInfo.AutoSize = true;
             lblInfo.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
             lblInfo.ForeColor = Color.White;
-            lblInfo.Location = new Point(34, 131);
+            lblInfo.Location = new Point(21, 131);
             lblInfo.Margin = new Padding(25);
             lblInfo.MaximumSize = new Size(1075, 100);
             lblInfo.MinimumSize = new Size(0, 100);
@@ -166,12 +169,41 @@
             lblInfo.TabIndex = 6;
             lblInfo.Text = "Welcome! This application is designed to make it easier to interact with the tree. To setup a connection go to the config menu\r\n\r\n";
             // 
+            // tbConsole
+            // 
+            tbConsole.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbConsole.BackColor = Color.FromArgb(18, 17, 19);
+            tbConsole.BorderStyle = BorderStyle.None;
+            tbConsole.Location = new Point(25, 25);
+            tbConsole.Margin = new Padding(25);
+            tbConsole.Name = "tbConsole";
+            tbConsole.Size = new Size(645, 550);
+            tbConsole.TabIndex = 7;
+            tbConsole.Text = "";
+            // 
+            // pnlConsole
+            // 
+            pnlConsole.Anchor = AnchorStyles.Top;
+            pnlConsole.BackColor = Color.FromArgb(18, 17, 19);
+            pnlConsole.BorderColor = Color.White;
+            pnlConsole.BorderWidth = 0;
+            pnlConsole.Controls.Add(tbConsole);
+            pnlConsole.CornerRadius = 20;
+            pnlConsole.Location = new Point(31, 925);
+            pnlConsole.Margin = new Padding(25);
+            pnlConsole.Name = "pnlConsole";
+            pnlConsole.Padding = new Padding(20);
+            pnlConsole.Size = new Size(695, 600);
+            pnlConsole.TabIndex = 3;
+            pnlConsole.Text = "customRectangle1";
+            // 
             // formHome
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 39, 37);
-            ClientSize = new Size(1125, 900);
+            ClientSize = new Size(1075, 1626);
+            Controls.Add(pnlConsole);
             Controls.Add(lblInfo);
             Controls.Add(lblTitle);
             Controls.Add(picLogo);
@@ -187,6 +219,7 @@
             pnlPath.PerformLayout();
             pnlActive.ResumeLayout(false);
             pnlActive.PerformLayout();
+            pnlConsole.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -202,5 +235,7 @@
         private Custom_Controls.CustomRectangle pnlActive;
         private Label lblActive;
         private Label lblInfo;
+        private RichTextBox tbConsole;
+        private Custom_Controls.CustomRectangle pnlConsole;
     }
 }

@@ -30,14 +30,10 @@
             customRectangle1 = new Custom_Controls.CustomRectangle();
             tbPort = new Custom_Controls.CustomTextbox();
             label1 = new Label();
-            customRectangle2 = new Custom_Controls.CustomRectangle();
-            picTestingCheckbox = new Custom_Controls.PicturePanel();
-            label2 = new Label();
             lblInfo = new Label();
             btn = new Custom_Controls.CustomButton();
             pnlLevel.SuspendLayout();
             customRectangle1.SuspendLayout();
-            customRectangle2.SuspendLayout();
             SuspendLayout();
             // 
             // pnlLevel
@@ -153,44 +149,6 @@
             label1.TabIndex = 2;
             label1.Text = "Port :";
             // 
-            // customRectangle2
-            // 
-            customRectangle2.BackColor = Color.FromArgb(18, 17, 19);
-            customRectangle2.BorderColor = Color.White;
-            customRectangle2.BorderWidth = 0;
-            customRectangle2.Controls.Add(picTestingCheckbox);
-            customRectangle2.Controls.Add(label2);
-            customRectangle2.CornerRadius = 20;
-            customRectangle2.Location = new Point(29, 627);
-            customRectangle2.Margin = new Padding(25);
-            customRectangle2.Name = "customRectangle2";
-            customRectangle2.Size = new Size(277, 100);
-            customRectangle2.TabIndex = 1;
-            customRectangle2.Text = "customRectangle1";
-            // 
-            // picTestingCheckbox
-            // 
-            picTestingCheckbox.Image = Resources.Icons.dot_circle__1_;
-            picTestingCheckbox.ImagePortion = new Rectangle(0, 0, 512, 512);
-            picTestingCheckbox.Location = new Point(198, 32);
-            picTestingCheckbox.Name = "picTestingCheckbox";
-            picTestingCheckbox.Size = new Size(40, 40);
-            picTestingCheckbox.TabIndex = 8;
-            picTestingCheckbox.Click += picTestingCheckbox_Click;
-            // 
-            // label2
-            // 
-            label2.AutoEllipsis = true;
-            label2.AutoSize = true;
-            label2.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(25, 33);
-            label2.Margin = new Padding(25);
-            label2.Name = "label2";
-            label2.Size = new Size(150, 33);
-            label2.TabIndex = 2;
-            label2.Text = "Testing :";
-            // 
             // lblInfo
             // 
             lblInfo.AutoEllipsis = true;
@@ -216,7 +174,7 @@
             btn.FlatStyle = FlatStyle.Flat;
             btn.Font = new Font("Consolas", 14F, FontStyle.Regular, GraphicsUnit.Point);
             btn.ForeColor = Color.White;
-            btn.Location = new Point(509, 627);
+            btn.Location = new Point(296, 633);
             btn.Name = "btn";
             btn.Size = new Size(248, 100);
             btn.TabIndex = 7;
@@ -233,7 +191,6 @@
             Controls.Add(btn);
             Controls.Add(lblInfo);
             Controls.Add(lblTitle);
-            Controls.Add(customRectangle2);
             Controls.Add(customRectangle1);
             Controls.Add(pnlLevel);
             FormBorderStyle = FormBorderStyle.None;
@@ -243,8 +200,6 @@
             pnlLevel.PerformLayout();
             customRectangle1.ResumeLayout(false);
             customRectangle1.PerformLayout();
-            customRectangle2.ResumeLayout(false);
-            customRectangle2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -256,12 +211,9 @@
         private Label lblTitle;
         private Custom_Controls.CustomRectangle customRectangle1;
         private Label label1;
-        private Custom_Controls.CustomRectangle customRectangle2;
-        private Label label2;
         private Label lblInfo;
         private Custom_Controls.CustomTextbox tbIp;
         private Custom_Controls.CustomTextbox tbPort;
         private Custom_Controls.CustomButton btn;
-        private Custom_Controls.PicturePanel picTestingCheckbox;
     }
 }

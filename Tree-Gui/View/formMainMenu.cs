@@ -30,13 +30,6 @@ public partial class formMainMenu : Form {
 
         DisplayUserForm(new formHome());
 
-        //_menuSubViews = new List<MenuSubView>() {x\S
-        //    new formHome(),
-        //    new formConfig(),
-        //    new formPlay(),
-        //    new formScanWelcome()
-        //};
-
         // Call the OnResize event to ensure that the form is formatted correctly
         OnResize(EventArgs.Empty);
     }
@@ -70,10 +63,12 @@ public partial class formMainMenu : Form {
         }
 
 
-        SubForm.Width = Width - MINIMISED_MENU_WIDTH;
+        SubForm.Width = Width - MINIMISED_MENU_WIDTH - sb.Width;
         if (_menuMinimised) MinimiseMenu();
         else MaximiseMenu();
     }
+
+    #region Menu formatting
 
     private void Menu_Click(object sender, EventArgs e) {
         _menuMinimised = !_menuMinimised;
@@ -93,6 +88,10 @@ public partial class formMainMenu : Form {
         if (SubForm is null) return;
         SubForm.Location = new Point(MINIMISED_MENU_WIDTH - MENU_WIDTH, 0);
     }
+
+    #endregion
+
+    #region Menu navigation
 
     private void DisplayUserForm(Form form) {
         SubForm = (Form?)form;
@@ -139,9 +138,10 @@ public partial class formMainMenu : Form {
 
     private void miConfig_MenuClick(object sender, EventArgs e) {
         MinimiseMenu();
-
         if (SubForm is not formConfig) DisplayUserForm(new formConfig());
     }
+
+    #endregion
 
     private void miExit_MenuClick(object sender, EventArgs e) {
         MinimiseMenu();
@@ -157,9 +157,7 @@ public partial class formMainMenu : Form {
 
     private void sb_ValueChanged(object sender, EventArgs e) {
         if (SubForm is null) return;
-        SubForm.Location = new Point(_menuMinimised ? -125 : 0, -sb.Value);
+        SubForm.Location = new Point(_menuMinimised ? 0 : -125, -sb.Value);
         Refresh();
     }
-
-
 }

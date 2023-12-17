@@ -17,6 +17,17 @@ internal class ProcessedImage {
     // The final blurred image
     public Image<Gray, Byte> BlurredImage { get; set; }
 
+    // Why is ctor down here?
+    public ProcessedImage() {
+        // Get the picture from the camera
+        _camera.Read(Picture);
+        // convert it to a RawImage
+        RawImage = Picture.ToImage<Bgr, Byte>();
+        // Greyscale it
+        GrayscaleImage = RawImage.Convert<Gray, Byte>();
+        // Blue it
+        BlurredImage = GrayscaleImage.SmoothGaussian(101);
+    }
 
     // Brightest points is just an array of points in a Image
     public Point[] BrightestPoints {
@@ -33,7 +44,6 @@ internal class ProcessedImage {
     public int Height { get => RawImage.Height; }
 
 
-
     // Highlight the brightest point(s)
     public static Image<Bgr, Byte> HighlightPoints(Image<Bgr, Byte> image, Point[] points) {
 
@@ -45,18 +55,5 @@ internal class ProcessedImage {
         }
         // Return the highlighted image to the caller
         return highlighted;
-    }
-
-
-    // Why is ctor down here?
-    public ProcessedImage() {
-        // Get the picture from the camera
-        _camera.Read(Picture);
-        // convert it to a RawImage
-        RawImage = Picture.ToImage<Bgr, Byte>();
-        // Greyscale it
-        GrayscaleImage = RawImage.Convert<Gray, Byte>();
-        // Blue it
-        BlurredImage = GrayscaleImage.SmoothGaussian(101);
     }
 }
